@@ -1,4 +1,9 @@
-import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
@@ -44,51 +49,35 @@ const faqs = [
 ];
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
-    <section className="faq-section">
-      <div className="faq-container">
-        <div className="faq-header">
-          <span className="faq-label">
+    <section className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="text-center mb-12">
+          <span className="text-highlight-orange font-semibold text-sm uppercase tracking-wider">
             Dúvidas frequentes
           </span>
-          <h2 className="faq-title">
-            Perguntas{" "}
-            <span className="gradient-text">Frequentes</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
+            Perguntas <span className="gradient-text">Frequentes</span>
           </h2>
         </div>
 
-        <div className="faq-content">
-          <div className="faq-list">
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <div
+              <AccordionItem
                 key={index}
-                className={`faq-item ${openIndex === index ? 'active' : ''}`}
+                value={`item-${index}`}
+                className="glass-card rounded-xl px-6 border-border/50 data-[state=open]:border-primary/50 transition-colors"
               >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="faq-button"
-                >
-                  <span className="faq-question">
-                    {faq.question}
-                  </span>
-                  <span className={`faq-arrow ${openIndex === index ? 'open' : ''}`}>
-                    ▼
-                  </span>
-                </button>
-                {openIndex === index && (
-                  <div className="faq-answer">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
+                <AccordionTrigger className="text-foreground text-left font-semibold text-base md:text-lg py-5 hover:no-underline hover:text-primary">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base pb-5">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </div>
     </section>

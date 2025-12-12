@@ -2,36 +2,38 @@ import imgExpert from "@/assets/img-expert.webp";
 
 const BioSection = () => {
   return (
-    <section className="bio-section">
-      <div className="bio-container">
-        <div className="bio-content">
-          <div className="bio-flex">
-            <div className="bio-image-wrapper">
+    <section className="py-16 md:py-24 bg-gradient-pink">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Image */}
+            <div className="w-full md:w-1/2">
               <img
                 src={imgExpert}
                 alt="Naluzz - Tradutora Multitrampo"
-                className="bio-image"
+                className="w-full max-w-md mx-auto md:mx-0"
               />
             </div>
 
-            <div className="bio-text-wrapper">
-              <h2 className="bio-title">
+            {/* Content */}
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 uppercase tracking-wide">
                 Meet Your Teacher!
               </h2>
 
-              <p className="bio-intro">
+              <p className="text-foreground text-lg mb-4">
                 Oi, eu sou a Naluzz!
               </p>
 
-              <p className="bio-paragraph">
+              <p className="text-foreground text-base md:text-lg leading-relaxed mb-4">
                 Monetizo meu inglês há 16 anos como Tradutora Multitrampo e{" "}
-                <strong className="orange-text">
+                <strong className="text-highlight-orange">
                   já fiz mais de R$ 2 milhões trabalhando do meu jeito,
                 </strong>{" "}
                 respeitando minha autenticidade e chutando as caixinhas nas quais os outros tentaram me encaixar à força.
               </p>
 
-              <p className="bio-paragraph">
+              <p className="text-foreground text-base md:text-lg leading-relaxed">
                 Vou mostrar para você que é possível{" "}
                 <strong>
                   fazer MAIS DINHEIRO do que você ganha atualmente, trabalhando menos e vivendo uma vida que realmente faz sentido para você:

@@ -1,52 +1,54 @@
+import { motion } from "framer-motion";
 import Ticker from "./Ticker";
+import CTAButton from "./CTAButton";
 
 const HeroSection = () => {
-  const handleClick = () => {
-    document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="hero-section">
-      <div className="hero-bg-gradient" />
-      <div className="hero-bg-overlay" />
-      <div className="hero-glow-1" />
-      <div className="hero-glow-2" />
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background gradient like FinalCTA */}
+      <div className="absolute inset-0 bg-gradient-to-t from-hero via-hero/80 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-r from-gradient-pink/10 via-transparent to-gradient-purple/10" />
+      
+      {/* Glow effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-pink/20 rounded-full blur-[120px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-purple/30 rounded-full blur-[100px]" />
       
       <Ticker />
       
-      <div className="hero-container">
-        <div className="hero-title-wrapper">
-          <h1 className="hero-title">
+      <div className="container relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-44px)] py-16 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight mb-6 text-foreground">
             VOCÊ ESTÁ USANDO{" "}
-            <span className="hero-title-highlight">ERRADO</span>{" "}
+            <span className="text-highlight">ERRADO</span>{" "}
             O SEU INGLÊS!
           </h1>
         </div>
 
-        <div className="hero-subtitle-wrapper">
-          <p className="hero-subtitle">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-off-white/90 leading-relaxed mb-8">
             Você estudou inglês por anos, mas no fim só usa pra entender música e série? 
             Enquanto isso, tem gente ganhando mais de{" "}
-            <span className="orange-text">R$5 mil por mês</span>{" "}
+            <span className="text-highlight font-semibold">R$5 mil por mês</span>{" "}
             com metade do seu nível de inglês — E sem nem precisar aparecer.
           </p>
         </div>
 
-        <div className="hero-description-wrapper">
-          <p className="hero-description">
-            Descubra a <span style={{ color: "#FFFFFF", fontWeight: 600 }}>profissão invisível</span>, 
+        <div className="max-w-2xl mx-auto mb-10">
+          <p className="text-base md:text-lg text-off-white/70 leading-relaxed">
+            Descubra a <span className="text-foreground font-semibold">profissão invisível</span>, 
             que vai te pagar em Dólar/Euro, usando a ferramenta que você já tem: 
-            <span className="orange-text"> O seu segundo idioma.</span>
+            <span className="text-highlight"> O seu segundo idioma.</span>
           </p>
         </div>
 
-        <a
-          href="#oferta"
-          onClick={(e) => { e.preventDefault(); handleClick(); }}
-          className="cta-button"
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
         >
-          QUERO PARTICIPAR DO AULÃO
-        </a>
+          <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}>
+            QUERO PARTICIPAR DO AULÃO
+          </CTAButton>
+        </motion.div>
       </div>
     </section>
   );

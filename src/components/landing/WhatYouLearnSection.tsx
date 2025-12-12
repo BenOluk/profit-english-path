@@ -1,3 +1,6 @@
+import { Check } from "lucide-react";
+import CTAButton from "./CTAButton";
+
 const learnings = [
   "Como esse mercado realmente funciona",
   "Como começar do jeito certo",
@@ -5,53 +8,48 @@ const learnings = [
 ];
 
 const WhatYouLearnSection = () => {
-  const handleClick = () => {
-    document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="whatlearn-section">
-      <div className="whatlearn-glow-1" />
-      <div className="whatlearn-glow-2" />
+    <section className="py-20 md:py-28 bg-card relative overflow-hidden">
+      <div className="absolute right-0 top-1/4 w-80 h-80 bg-gradient-pink/10 rounded-full blur-[100px]" />
+      <div className="absolute left-0 bottom-1/4 w-60 h-60 bg-primary/10 rounded-full blur-[80px]" />
       
-      <div className="whatlearn-container">
-        <div className="whatlearn-content">
-          <h2 className="whatlearn-title">
+      <div className="container relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             A verdade é:
           </h2>
           
-          <p className="whatlearn-subtitle">
-            Você pode começar <span className="orange-text">agora</span>, com o inglês que já sabe, e transformar isso em uma fonte real de renda — mesmo que esteja começando do zero na área.
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12">
+            Você pode começar <span className="text-highlight-orange font-semibold">agora</span>, com o inglês que já sabe, e transformar isso em uma fonte real de renda — mesmo que esteja começando do zero na área.
           </p>
 
-          <h3 className="whatlearn-heading">
+          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-8">
             No Aulão Inglês Lucrativo, você aprende:
           </h3>
 
-          <div className="whatlearn-list">
+          <div className="space-y-4 mb-10">
             {learnings.map((item, index) => (
-              <div key={index} className="whatlearn-item">
-                <div className="whatlearn-check">
-                  <span>✓</span>
+              <div
+                key={index}
+                className="flex items-start gap-4 text-left"
+              >
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/30 flex items-center justify-center mt-1">
+                  <Check className="w-4 h-4 text-primary" />
                 </div>
-                <p className="whatlearn-item-text">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   {item}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="whatlearn-cta-wrapper">
-            <p className="whatlearn-cta-label">
+          <div className="space-y-4">
+            <p className="text-highlight-orange font-semibold text-lg">
               ➜ Aulão Inglês Lucrativo - Acesso Imediato
             </p>
-            <a
-              href="#oferta"
-              onClick={(e) => { e.preventDefault(); handleClick(); }}
-              className="cta-button"
-            >
+            <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })} className="mx-auto">
               QUERO ACESSAR O AULÃO AGORA
-            </a>
+            </CTAButton>
           </div>
         </div>
       </div>
