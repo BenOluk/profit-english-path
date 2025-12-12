@@ -1,17 +1,10 @@
-import { motion } from "framer-motion";
 import imgMao from "@/assets/img-mao.webp";
 
 const GuaranteeSection = () => {
   return (
     <section className="py-12 md:py-16 bg-hero-purple">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
-        >
+        <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
             {/* Left hand */}
             <div className="hidden md:block w-32 lg:w-40">
@@ -42,7 +35,7 @@ const GuaranteeSection = () => {
               />
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
