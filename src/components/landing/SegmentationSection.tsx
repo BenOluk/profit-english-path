@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Lightbulb, TrendingUp, MapPin, Coins, UserCheck, Zap } from "lucide-react";
 import CTAButton from "./CTAButton";
 
@@ -35,27 +34,15 @@ const SegmentationSection = () => {
       <div className="absolute left-1/2 top-0 w-96 h-96 bg-gradient-purple/10 rounded-full blur-[120px] -translate-x-1/2" />
       
       <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4">
+        <div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
             <span className="text-highlight">✦</span> Se você...
           </h2>
-          <p className="text-center text-muted-foreground text-lg mb-12 max-w-xl mx-auto">
-            Esse aulão foi feito especialmente para você
-          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-8">
             {segments.map((segment, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="glass-card p-6 flex items-start gap-4 group hover:border-gradient-pink/40 transition-all duration-300"
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -64,20 +51,18 @@ const SegmentationSection = () => {
                 <p className="text-off-white/90 leading-relaxed">
                   {segment.text}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-center"
-          >
+          <p className="text-center text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+            Esse aulão foi feito especialmente para você
+          </p>
+
+          <div className="text-center">
             <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}>GARANTA SEU INGRESSO AGORA</CTAButton>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
