@@ -28,10 +28,7 @@ const FinalCTASection = () => {
             <span className="gradient-text">renda real?</span>
           </h2>
 
-          <p className="text-xl text-off-white/80 mb-10 max-w-2xl mx-auto">
-            Entre agora no aulão gratuito e descubra como dar o primeiro passo 
-            rumo à sua independência financeira.
-          </p>
+          <p className="text-xl text-off-white/80 mb-10 max-w-2xl mx-auto">Entre agora na Imersão Gravada e descubra como dar o primeiro passo rumo à sua independência financeira.</p>
 
           <motion.div whileHover={{
           scale: 1.02
