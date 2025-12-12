@@ -10,7 +10,7 @@ const includedItems = [
 
 const PricingSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-background relative overflow-hidden">
+    <section id="oferta" className="py-16 md:py-24 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
@@ -90,7 +90,7 @@ const PricingSection = () => {
 
               {/* CTA */}
               <div className="pt-6">
-                <CTAButton className="w-full text-center justify-center">
+                <CTAButton href="https://pay.kiwify.com.br/be0Jzax" className="w-full text-center justify-center">
                   QUERO MEU INGRESSO + BÔNUS!
                 </CTAButton>
               </div>

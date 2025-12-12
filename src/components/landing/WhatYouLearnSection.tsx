@@ -58,7 +58,7 @@ const WhatYouLearnSection = () => {
             <p className="text-highlight-orange font-semibold text-lg">
               ➜ Aulão Inglês Lucrativo - Acesso Imediato
             </p>
-            <CTAButton className="mx-auto">
+            <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })} className="mx-auto">
               QUERO ACESSAR O AULÃO AGORA
             </CTAButton>
           </div>

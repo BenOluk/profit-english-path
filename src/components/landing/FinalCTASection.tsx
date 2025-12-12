@@ -35,7 +35,7 @@ const FinalCTASection = () => {
         }} whileTap={{
           scale: 0.98
         }}>
-            <CTAButton className="text-lg md:text-xl px-12 py-6">
+            <CTAButton href="https://pay.kiwify.com.br/be0Jzax" className="text-lg md:text-xl px-12 py-6">
               QUERO PARTICIPAR AGORA
             </CTAButton>
           </motion.div>

@@ -57,7 +57,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <CTAButton>QUERO PARTICIPAR DO AULÃO</CTAButton>
+          <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}>QUERO PARTICIPAR DO AULÃO</CTAButton>
         </motion.div>
       </div>
     </section>
