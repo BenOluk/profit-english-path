@@ -26,7 +26,7 @@ const GuaranteeSection = () => {
             <div className="text-center md:text-left">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground italic mb-3">
                 Satisfação garantida ou seu{" "}
-                <span className="text-yellow-300">dinheiro de volta</span>
+                <span className="gradient-text">dinheiro de volta</span>
               </h3>
               <p className="text-foreground/90 text-base md:text-lg max-w-md">
                 Até 7 dias após o pagamento, você pode cancelar por qualquer motivo e receberá 100% do valor pago.
