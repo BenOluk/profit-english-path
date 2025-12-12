@@ -1,0 +1,1179 @@
+<!-- 
+  IMERSÃO INGLÊS LUCRATIVO - Landing Page
+  Para usar no Elementor HTML Widget
+  Todas as classes têm prefixo .lp- para evitar conflitos
+-->
+
+<style>
+  /* Google Fonts Import */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+  /* CSS Reset & Base */
+  .lp-wrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .lp-wrapper {
+    font-family: 'Poppins', sans-serif;
+    background: #000000;
+    color: #FFFFFF;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .lp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ========================================
+     1. TOP TICKER
+  ======================================== */
+  .lp-ticker {
+    background: linear-gradient(90deg, #FF7734 0%, #FF0AD7 100%);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 12px 0;
+  }
+
+  .lp-ticker-content {
+    display: inline-block;
+    animation: lp-scroll 20s linear infinite;
+  }
+
+  .lp-ticker-text {
+    display: inline-block;
+    padding: 0 50px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @keyframes lp-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ========================================
+     2. HERO SECTION
+  ======================================== */
+  .lp-hero {
+    background: #7E33FF;
+    padding: 80px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lp-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,10,215,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .lp-hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* EDIT HERE: Hero Headline */
+  .lp-hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
+  .lp-hero-title .lp-highlight {
+    color: #FF7734;
+    text-shadow: 0 0 30px rgba(255, 119, 52, 0.5);
+  }
+
+  /* EDIT HERE: Hero Subheadline */
+  .lp-hero-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #F4F5F7;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.7;
+  }
+
+  .lp-hero-subtitle .lp-highlight {
+    color: #FF7734;
+    font-weight: 600;
+  }
+
+  /* EDIT HERE: Hero Secondary Text */
+  .lp-hero-text {
+    font-size: 18px;
+    color: rgba(255,255,255,0.8);
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+
+  .lp-hero-text .lp-highlight {
+    color: #FF7734;
+  }
+
+  /* CTA Button with Pulse Animation */
+  .lp-btn {
+    display: inline-block;
+    background: linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%);
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 50px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    animation: lp-pulse 2s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .lp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(255, 10, 215, 0.4);
+  }
+
+  @keyframes lp-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(255, 10, 215, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 20px rgba(255, 10, 215, 0);
+    }
+  }
+
+  .lp-hero-note {
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ========================================
+     3. BENEFITS CARDS (FEATURES)
+  ======================================== */
+  .lp-features {
+    background: #000000;
+    padding: 80px 0;
+  }
+
+  .lp-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .lp-feature-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .lp-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 10, 215, 0.5);
+  }
+
+  .lp-feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 32px;
+  }
+
+  /* EDIT HERE: Feature Card Title */
+  .lp-feature-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  /* EDIT HERE: Feature Card Description */
+  .lp-feature-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ========================================
+     4. THE ARGUMENT (COPY)
+  ======================================== */
+  .lp-argument {
+    background: linear-gradient(180deg, #000000 0%, #120a1f 100%);
+    padding: 80px 0;
+  }
+
+  .lp-argument-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* EDIT HERE: Argument Headline */
+  .lp-argument-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  .lp-argument-title .lp-gradient {
+    background: linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* EDIT HERE: Argument Text Blocks */
+  .lp-argument-text {
+    font-size: 18px;
+    color: #F4F5F7;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  .lp-argument-text .lp-highlight {
+    color: #FF7734;
+    font-weight: 600;
+  }
+
+  .lp-argument-text .lp-highlight-pink {
+    color: #FF0AD7;
+    font-weight: 600;
+  }
+
+  /* ========================================
+     5. LEARNING CHECKLIST
+  ======================================== */
+  .lp-learning {
+    background: #120a1f;
+    padding: 80px 0;
+  }
+
+  .lp-learning-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* EDIT HERE: Learning Section Title */
+  .lp-learning-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .lp-learning-subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 40px;
+  }
+
+  .lp-learning-subtitle .lp-highlight-orange {
+    color: #FF7734;
+    font-weight: 600;
+  }
+
+  .lp-checklist {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+
+  /* EDIT HERE: Checklist Items */
+  .lp-checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #F4F5F7;
+  }
+
+  .lp-check-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: rgba(126, 51, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7E33FF;
+    font-size: 16px;
+  }
+
+  /* ========================================
+     6. EVENT DETAILS BOX (PRICING)
+  ======================================== */
+  .lp-pricing {
+    background: #000000;
+    padding: 80px 0;
+  }
+
+  .lp-pricing-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.03);
+    border: 2px solid rgba(255, 10, 215, 0.3);
+    border-radius: 24px;
+    padding: 50px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lp-pricing-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #FF0AD7, transparent);
+  }
+
+  /* EDIT HERE: Pricing Headline */
+  .lp-pricing-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  .lp-pricing-title .lp-highlight-orange {
+    color: #FF7734;
+  }
+
+  .lp-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  /* EDIT HERE: Original Price */
+  .lp-price-old {
+    font-size: 24px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: line-through;
+  }
+
+  /* EDIT HERE: Current Price */
+  .lp-price-current {
+    font-size: 56px;
+    font-weight: 800;
+    background: linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .lp-price-note {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 30px;
+  }
+
+  .lp-pricing-cta {
+    margin-top: 30px;
+  }
+
+  /* ========================================
+     7. SEGMENTATION ("Is this for you?")
+  ======================================== */
+  .lp-segmentation {
+    background: linear-gradient(180deg, #000000 0%, #120a1f 100%);
+    padding: 80px 0;
+  }
+
+  .lp-segmentation-content {
+    text-align: center;
+  }
+
+  /* EDIT HERE: Segmentation Title */
+  .lp-segmentation-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+
+  .lp-segmentation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+  }
+
+  /* EDIT HERE: Segmentation Items */
+  .lp-segment-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: border-color 0.3s ease;
+  }
+
+  .lp-segment-item:hover {
+    border-color: rgba(255, 10, 215, 0.4);
+  }
+
+  .lp-segment-icon {
+    flex-shrink: 0;
+    font-size: 28px;
+  }
+
+  .lp-segment-text {
+    font-size: 18px;
+    color: #F4F5F7;
+    line-height: 1.6;
+  }
+
+  .lp-segment-text .lp-highlight {
+    color: #FF7734;
+    font-weight: 600;
+  }
+
+  /* ========================================
+     8. GUARANTEE SECTION
+  ======================================== */
+  .lp-guarantee {
+    background: #FF0AD7;
+    padding: 60px 0;
+  }
+
+  .lp-guarantee-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  /* EDIT HERE: Guarantee Image URL */
+  .lp-guarantee-image {
+    width: 200px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .lp-guarantee-text {
+    text-align: left;
+  }
+
+  /* EDIT HERE: Guarantee Headline */
+  .lp-guarantee-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .lp-guarantee-title .lp-dark {
+    color: #120a1f;
+  }
+
+  /* EDIT HERE: Guarantee Description */
+  .lp-guarantee-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.9);
+    max-width: 400px;
+  }
+
+  /* ========================================
+     9. FAQ SECTION
+  ======================================== */
+  .lp-faq {
+    background: #000000;
+    padding: 80px 0;
+  }
+
+  .lp-faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* EDIT HERE: FAQ Title */
+  .lp-faq-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .lp-faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 25px 0;
+  }
+
+  .lp-faq-question {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+  }
+
+  .lp-faq-question::after {
+    content: '+';
+    font-size: 24px;
+    color: #FF0AD7;
+    transition: transform 0.3s ease;
+  }
+
+  .lp-faq-item.active .lp-faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  /* EDIT HERE: FAQ Answers */
+  .lp-faq-answer {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .lp-faq-item.active .lp-faq-answer {
+    max-height: 500px;
+    padding-top: 20px;
+  }
+
+  /* ========================================
+     10. FINAL CTA SECTION
+  ======================================== */
+  .lp-final-cta {
+    background: linear-gradient(180deg, #120a1f 0%, #7E33FF 100%);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lp-final-cta::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 10, 215, 0.2);
+    border-radius: 50%;
+    filter: blur(120px);
+  }
+
+  .lp-final-cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* EDIT HERE: Final CTA Headline */
+  .lp-final-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .lp-final-title .lp-highlight {
+    color: #FF7734;
+  }
+
+  .lp-final-title .lp-gradient {
+    background: linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* EDIT HERE: Final CTA Subtitle */
+  .lp-final-subtitle {
+    font-size: 20px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lp-final-note {
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ========================================
+     RESPONSIVE DESIGN
+  ======================================== */
+  @media (max-width: 992px) {
+    .lp-features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lp-hero-title {
+      font-size: 36px;
+    }
+
+    .lp-hero-subtitle {
+      font-size: 18px;
+    }
+
+    .lp-argument-title,
+    .lp-learning-title,
+    .lp-segmentation-title,
+    .lp-faq-title {
+      font-size: 30px;
+    }
+
+    .lp-final-title {
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .lp-features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .lp-segmentation-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .lp-hero {
+      padding: 60px 0 80px;
+    }
+
+    .lp-hero-title {
+      font-size: 28px;
+    }
+
+    .lp-hero-subtitle {
+      font-size: 16px;
+    }
+
+    .lp-hero-text {
+      font-size: 15px;
+    }
+
+    .lp-btn {
+      font-size: 16px;
+      padding: 18px 35px;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .lp-argument-title,
+    .lp-learning-title,
+    .lp-segmentation-title,
+    .lp-faq-title,
+    .lp-pricing-title {
+      font-size: 26px;
+    }
+
+    .lp-argument-text,
+    .lp-checklist-item,
+    .lp-segment-text {
+      font-size: 16px;
+    }
+
+    .lp-price-current {
+      font-size: 42px;
+    }
+
+    .lp-pricing-box {
+      padding: 40px 25px;
+    }
+
+    .lp-guarantee-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .lp-guarantee-text {
+      text-align: center;
+    }
+
+    .lp-guarantee-title {
+      font-size: 26px;
+    }
+
+    .lp-guarantee-desc {
+      margin: 0 auto;
+    }
+
+    .lp-final-title {
+      font-size: 26px;
+    }
+
+    .lp-final-subtitle {
+      font-size: 16px;
+    }
+
+    .lp-faq-question {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .lp-ticker-text {
+      font-size: 12px;
+    }
+
+    .lp-hero-title {
+      font-size: 24px;
+    }
+
+    .lp-feature-card {
+      padding: 30px 20px;
+    }
+
+    .lp-checklist-item {
+      font-size: 15px;
+    }
+
+    .lp-check-icon {
+      width: 24px;
+      height: 24px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+<div class="lp-wrapper">
+  
+  <!-- ========================================
+       1. TOP TICKER
+  ======================================== -->
+  <div class="lp-ticker">
+    <div class="lp-ticker-content">
+      <!-- EDIT HERE: Ticker Text (duplicate for seamless scroll) -->
+      <span class="lp-ticker-text">🚨 EXCLUSIVO PARA PESSOAS COM INGLÊS INTERMEDIÁRIO OU AVANÇADO 🚨</span>
+      <span class="lp-ticker-text">🚨 EXCLUSIVO PARA PESSOAS COM INGLÊS INTERMEDIÁRIO OU AVANÇADO 🚨</span>
+      <span class="lp-ticker-text">🚨 EXCLUSIVO PARA PESSOAS COM INGLÊS INTERMEDIÁRIO OU AVANÇADO 🚨</span>
+      <span class="lp-ticker-text">🚨 EXCLUSIVO PARA PESSOAS COM INGLÊS INTERMEDIÁRIO OU AVANÇADO 🚨</span>
+      <span class="lp-ticker-text">🚨 EXCLUSIVO PARA PESSOAS COM INGLÊS INTERMEDIÁRIO OU AVANÇADO 🚨</span>
+      <span class="lp-ticker-text">🚨 EXCLUSIVO PARA PESSOAS COM INGLÊS INTERMEDIÁRIO OU AVANÇADO 🚨</span>
+    </div>
+  </div>
+
+  <!-- ========================================
+       2. HERO SECTION
+  ======================================== -->
+  <section class="lp-hero">
+    <div class="lp-container">
+      <div class="lp-hero-content">
+        <!-- EDIT HERE: Hero Headline -->
+        <h1 class="lp-hero-title">
+          VOCÊ ESTÁ USANDO <span class="lp-highlight">ERRADO</span> O SEU INGLÊS!
+        </h1>
+
+        <!-- EDIT HERE: Hero Subheadline -->
+        <p class="lp-hero-subtitle">
+          Você estudou inglês por anos, mas no fim só usa pra entender música e série? 
+          Enquanto isso, tem gente ganhando mais de <span class="lp-highlight">R$5 mil por mês</span> 
+          com metade do seu nível de inglês — E sem nem precisar aparecer.
+        </p>
+
+        <!-- EDIT HERE: Hero Secondary Text -->
+        <p class="lp-hero-text">
+          Descubra a <strong>profissão invisível</strong>, que vai te pagar em Dólar/Euro, 
+          usando a ferramenta que você já tem: <span class="lp-highlight">O seu segundo idioma.</span>
+        </p>
+
+        <!-- EDIT HERE: Hero CTA Button Link -->
+        <a href="#oferta" class="lp-btn">QUERO PARTICIPAR DO AULÃO</a>
+
+        <!-- EDIT HERE: Hero Note -->
+        <p class="lp-hero-note">Aulão Gravado - Acesso Imediato</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       3. BENEFITS CARDS (FEATURES)
+  ======================================== -->
+  <section class="lp-features">
+    <div class="lp-container">
+      <div class="lp-features-grid">
+        
+        <!-- Feature Card 1 -->
+        <div class="lp-feature-card">
+          <div class="lp-feature-icon">⏰</div>
+          <!-- EDIT HERE: Feature 1 Title -->
+          <h3 class="lp-feature-title">Trabalhe só 3h por dia</h3>
+          <!-- EDIT HERE: Feature 1 Description -->
+          <p class="lp-feature-desc">Mais leveza, mais tempo pra você</p>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="lp-feature-card">
+          <div class="lp-feature-icon">🏠</div>
+          <!-- EDIT HERE: Feature 2 Title -->
+          <h3 class="lp-feature-title">100% Home Office</h3>
+          <!-- EDIT HERE: Feature 2 Description -->
+          <p class="lp-feature-desc">Clientes do mundo todo, você no seu sofá</p>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="lp-feature-card">
+          <div class="lp-feature-icon">🎓</div>
+          <!-- EDIT HERE: Feature 3 Title -->
+          <h3 class="lp-feature-title">Sem diploma, sem enrolação</h3>
+          <!-- EDIT HERE: Feature 3 Description -->
+          <p class="lp-feature-desc">Você já tem o que precisa pra começar agora</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       4. THE ARGUMENT (COPY)
+  ======================================== -->
+  <section class="lp-argument">
+    <div class="lp-container">
+      <div class="lp-argument-content">
+        
+        <!-- EDIT HERE: Argument Headline -->
+        <h2 class="lp-argument-title">
+          O que você precisa pra atuar como <span class="lp-gradient">tradutor?</span>
+        </h2>
+
+        <!-- EDIT HERE: Argument Text Block 1 -->
+        <p class="lp-argument-text">
+          Você não precisa de diploma. Não precisa de anos de experiência. 
+          E também não precisa ter inglês perfeito.
+        </p>
+
+        <!-- EDIT HERE: Argument Text Block 2 -->
+        <p class="lp-argument-text">
+          <span class="lp-highlight">Se você consegue assistir um filme sem legenda, 
+          entende podcasts e vídeos em inglês, e dá aquela ajudinha pros amigos 
+          quando precisam traduzir algo...</span> Você já tem o mínimo.
+        </p>
+
+        <!-- EDIT HERE: Argument Text Block 3 -->
+        <p class="lp-argument-text">
+          Na verdade, tá faltando muito pouco pra você começar a ganhar dinheiro com isso. 
+          E no <span class="lp-highlight-pink">Aulão Inglês Lucrativo</span>, 
+          eu vou te mostrar exatamente o que fazer.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       5. LEARNING CHECKLIST
+  ======================================== -->
+  <section class="lp-learning">
+    <div class="lp-container">
+      <div class="lp-learning-content">
+        
+        <!-- EDIT HERE: Learning Section Title -->
+        <h2 class="lp-learning-title">A verdade é:</h2>
+        
+        <!-- EDIT HERE: Learning Section Subtitle -->
+        <p class="lp-learning-subtitle">
+          Você pode começar <span class="lp-highlight-orange">agora</span>, com o inglês que já sabe, 
+          e transformar isso em uma fonte real de renda — mesmo que esteja começando do zero na área.
+        </p>
+
+        <h3 style="font-size: 22px; margin-bottom: 30px;">No Aulão Inglês Lucrativo, você aprende:</h3>
+
+        <div class="lp-checklist">
+          <!-- EDIT HERE: Checklist Item 1 -->
+          <div class="lp-checklist-item">
+            <div class="lp-check-icon">✓</div>
+            <span>Como esse mercado realmente funciona</span>
+          </div>
+          
+          <!-- EDIT HERE: Checklist Item 2 -->
+          <div class="lp-checklist-item">
+            <div class="lp-check-icon">✓</div>
+            <span>Como começar do jeito certo</span>
+          </div>
+          
+          <!-- EDIT HERE: Checklist Item 3 -->
+          <div class="lp-checklist-item">
+            <div class="lp-check-icon">✓</div>
+            <span>E como transformar seu inglês em até R$5 mil por mês sem precisar mudar de vida — só de rota.</span>
+          </div>
+        </div>
+
+        <!-- EDIT HERE: CTA Note -->
+        <p style="color: #FF7734; font-weight: 600; font-size: 18px; margin-bottom: 20px;">
+          ➜ Aulão Inglês Lucrativo - Acesso Imediato
+        </p>
+
+        <!-- EDIT HERE: CTA Button Link -->
+        <a href="#oferta" class="lp-btn">QUERO ACESSAR O AULÃO AGORA</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       6. EVENT DETAILS BOX (PRICING)
+  ======================================== -->
+  <section class="lp-pricing" id="oferta">
+    <div class="lp-container">
+      <div class="lp-pricing-box">
+        
+        <!-- EDIT HERE: Pricing Headline -->
+        <h2 class="lp-pricing-title">
+          Aulão <span class="lp-highlight-orange">Inglês Lucrativo</span>
+        </h2>
+
+        <div class="lp-price-row">
+          <!-- EDIT HERE: Original Price -->
+          <span class="lp-price-old">R$ 97,00</span>
+          <!-- EDIT HERE: Current Price -->
+          <span class="lp-price-current">R$ 25,00</span>
+        </div>
+
+        <!-- EDIT HERE: Price Note -->
+        <p class="lp-price-note">Acesso imediato • Pagamento único</p>
+
+        <div class="lp-pricing-cta">
+          <!-- EDIT HERE: CTA Button Link -->
+          <a href="https://pay.kiwify.com.br/be0Jzax" class="lp-btn">QUERO MEU ACESSO AGORA</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       7. SEGMENTATION ("Is this for you?")
+  ======================================== -->
+  <section class="lp-segmentation">
+    <div class="lp-container">
+      <div class="lp-segmentation-content">
+        
+        <!-- EDIT HERE: Segmentation Title -->
+        <h2 class="lp-segmentation-title">Esse aulão é pra você se...</h2>
+
+        <div class="lp-segmentation-grid">
+          
+          <!-- EDIT HERE: Segment Item 1 -->
+          <div class="lp-segment-item">
+            <span class="lp-segment-icon">💰</span>
+            <p class="lp-segment-text">
+              Você quer uma <span class="lp-highlight">renda extra</span> de verdade, não só promessa
+            </p>
+          </div>
+
+          <!-- EDIT HERE: Segment Item 2 -->
+          <div class="lp-segment-item">
+            <span class="lp-segment-icon">🏢</span>
+            <p class="lp-segment-text">
+              Você quer <span class="lp-highlight">sair da CLT</span> ou ter mais liberdade de horário
+            </p>
+          </div>
+
+          <!-- EDIT HERE: Segment Item 3 -->
+          <div class="lp-segment-item">
+            <span class="lp-segment-icon">🌍</span>
+            <p class="lp-segment-text">
+              Você quer trabalhar de <span class="lp-highlight">qualquer lugar</span>, até viajando
+            </p>
+          </div>
+
+          <!-- EDIT HERE: Segment Item 4 -->
+          <div class="lp-segment-item">
+            <span class="lp-segment-icon">💵</span>
+            <p class="lp-segment-text">
+              Você quer ganhar em <span class="lp-highlight">dólar ou euro</span>, sem sair do Brasil
+            </p>
+          </div>
+
+        </div>
+
+        <!-- EDIT HERE: CTA Button Link -->
+        <a href="#oferta" class="lp-btn">QUERO PARTICIPAR DO AULÃO</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       8. GUARANTEE SECTION
+  ======================================== -->
+  <section class="lp-guarantee">
+    <div class="lp-container">
+      <div class="lp-guarantee-content">
+        
+        <!-- EDIT HERE: Guarantee Image URL -->
+        <img src="https://i.imgur.com/YOUR_IMAGE_ID.png" alt="Garantia" class="lp-guarantee-image">
+
+        <div class="lp-guarantee-text">
+          <!-- EDIT HERE: Guarantee Title -->
+          <h3 class="lp-guarantee-title">
+            Satisfação garantida<br>ou seu <span class="lp-dark">dinheiro de volta</span>
+          </h3>
+          <!-- EDIT HERE: Guarantee Description -->
+          <p class="lp-guarantee-desc">
+            Se dentro de 7 dias você não gostar do conteúdo, é só pedir reembolso. 
+            Sem burocracia, sem perguntas.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       9. FAQ SECTION
+  ======================================== -->
+  <section class="lp-faq">
+    <div class="lp-container">
+      <div class="lp-faq-content">
+        
+        <!-- EDIT HERE: FAQ Title -->
+        <h2 class="lp-faq-title">Perguntas Frequentes</h2>
+
+        <!-- EDIT HERE: FAQ Item 1 -->
+        <div class="lp-faq-item">
+          <div class="lp-faq-question">Qual é o nível de inglês exigido?</div>
+          <div class="lp-faq-answer">
+            Você precisa ter um nível intermediário ou avançado em inglês. Se você consegue assistir filmes/séries sem legenda e entender a maior parte, provavelmente já tem o nível necessário.
+          </div>
+        </div>
+
+        <!-- EDIT HERE: FAQ Item 2 -->
+        <div class="lp-faq-item">
+          <div class="lp-faq-question">Quando terei acesso?</div>
+          <div class="lp-faq-answer">
+            O acesso é imediato após a confirmação do pagamento. Você receberá um e-mail com todas as instruções para acessar o conteúdo.
+          </div>
+        </div>
+
+        <!-- EDIT HERE: FAQ Item 3 -->
+        <div class="lp-faq-item">
+          <div class="lp-faq-question">Preciso ter diploma para trabalhar como tradutor?</div>
+          <div class="lp-faq-answer">
+            Não! A maioria dos tradutores freelancers não possui diploma específico na área. O que importa é a qualidade do seu trabalho e seu conhecimento dos idiomas.
+          </div>
+        </div>
+
+        <!-- EDIT HERE: FAQ Item 4 -->
+        <div class="lp-faq-item">
+          <div class="lp-faq-question">É preciso ter experiência prévia?</div>
+          <div class="lp-faq-answer">
+            Não é necessário ter experiência prévia. O aulão foi criado justamente para quem está começando do zero nessa área.
+          </div>
+        </div>
+
+        <!-- EDIT HERE: FAQ Item 5 -->
+        <div class="lp-faq-item">
+          <div class="lp-faq-question">Quanto tempo dura a imersão?</div>
+          <div class="lp-faq-answer">
+            O aulão gravado tem aproximadamente 2 horas de conteúdo direto ao ponto, sem enrolação.
+          </div>
+        </div>
+
+        <!-- EDIT HERE: FAQ Item 6 -->
+        <div class="lp-faq-item">
+          <div class="lp-faq-question">Por quanto tempo terei acesso?</div>
+          <div class="lp-faq-answer">
+            Você terá acesso vitalício ao conteúdo. Pode assistir quantas vezes quiser, no seu ritmo.
+          </div>
+        </div>
+
+        <!-- EDIT HERE: FAQ Item 7 -->
+        <div class="lp-faq-item">
+          <div class="lp-faq-question">Posso pedir reembolso?</div>
+          <div class="lp-faq-answer">
+            Sim! Oferecemos garantia incondicional de 7 dias. Se não gostar do conteúdo, é só pedir o reembolso que devolvemos 100% do seu dinheiro.
+          </div>
+        </div>
+
+        <!-- EDIT HERE: FAQ Item 8 -->
+        <div class="lp-faq-item">
+          <div class="lp-faq-question">Qual a forma de pagamento?</div>
+          <div class="lp-faq-answer">
+            Aceitamos cartão de crédito (até 12x) e PIX para pagamento à vista.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       10. FINAL CTA SECTION
+  ======================================== -->
+  <section class="lp-final-cta">
+    <div class="lp-container">
+      <div class="lp-final-cta-content">
+        
+        <!-- EDIT HERE: Final CTA Headline -->
+        <h2 class="lp-final-title">
+          Pronto pra <span class="lp-highlight">transformar</span> seu inglês em 
+          <span class="lp-gradient">renda real?</span>
+        </h2>
+
+        <!-- EDIT HERE: Final CTA Subtitle -->
+        <p class="lp-final-subtitle">
+          Entre agora na Imersão Gravada e descubra como dar o primeiro passo 
+          rumo à sua independência financeira.
+        </p>
+
+        <!-- EDIT HERE: Final CTA Button Link -->
+        <a href="https://pay.kiwify.com.br/be0Jzax" class="lp-btn">QUERO PARTICIPAR AGORA</a>
+
+        <!-- EDIT HERE: Final Note -->
+        <p class="lp-final-note">Aulão gravado - Acesso Imediato</p>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FAQ Toggle Script -->
+<script>
+  document.querySelectorAll('.lp-faq-question').forEach(function(question) {
+    question.addEventListener('click', function() {
+      var item = this.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
