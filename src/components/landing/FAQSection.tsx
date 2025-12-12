@@ -51,100 +51,38 @@ const FAQSection = () => {
   };
 
   return (
-    <section style={{
-      padding: "64px 0 96px",
-      backgroundColor: "#000000"
-    }}>
-      <div style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "0 16px"
-      }}>
-        <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <span style={{
-            color: "#FF7734",
-            fontWeight: 600,
-            fontSize: "14px",
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            fontFamily: "'Poppins', sans-serif"
-          }}>
+    <section className="faq-section">
+      <div className="faq-container">
+        <div className="faq-header">
+          <span className="faq-label">
             Dúvidas frequentes
           </span>
-          <h2 style={{
-            fontSize: "clamp(1.875rem, 4vw, 3rem)",
-            fontWeight: 700,
-            color: "#FFFFFF",
-            marginTop: "16px",
-            marginBottom: "24px",
-            fontFamily: "'Poppins', sans-serif"
-          }}>
+          <h2 className="faq-title">
             Perguntas{" "}
-            <span style={{
-              background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text"
-            }}>Frequentes</span>
+            <span className="gradient-text">Frequentes</span>
           </h2>
         </div>
 
-        <div style={{ maxWidth: "768px", margin: "0 auto" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div className="faq-content">
+          <div className="faq-list">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                style={{
-                  backgroundColor: "rgba(26, 26, 26, 0.6)",
-                  backdropFilter: "blur(24px)",
-                  border: openIndex === index ? "1px solid rgba(126, 51, 255, 0.5)" : "1px solid rgba(51, 51, 51, 0.5)",
-                  borderRadius: "12px",
-                  padding: "0 24px",
-                  overflow: "hidden",
-                  transition: "border-color 0.3s"
-                }}
+                className={`faq-item ${openIndex === index ? 'active' : ''}`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  style={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "20px 0",
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    textAlign: "left"
-                  }}
+                  className="faq-button"
                 >
-                  <span style={{
-                    color: "#FFFFFF",
-                    fontWeight: 600,
-                    fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
-                    paddingRight: "16px",
-                    fontFamily: "'Poppins', sans-serif"
-                  }}>
+                  <span className="faq-question">
                     {faq.question}
                   </span>
-                  <span style={{
-                    color: "#7E33FF",
-                    fontSize: "24px",
-                    transform: openIndex === index ? "rotate(180deg)" : "rotate(0)",
-                    transition: "transform 0.3s"
-                  }}>
+                  <span className={`faq-arrow ${openIndex === index ? 'open' : ''}`}>
                     ▼
                   </span>
                 </button>
                 {openIndex === index && (
-                  <div style={{
-                    paddingBottom: "20px",
-                    color: "rgba(179, 179, 179, 1)",
-                    fontSize: "16px",
-                    lineHeight: 1.7,
-                    whiteSpace: "pre-line",
-                    fontFamily: "'Poppins', sans-serif"
-                  }}>
+                  <div className="faq-answer">
                     {faq.answer}
                   </div>
                 )}

@@ -31,120 +31,37 @@ const SegmentationSection = () => {
   };
 
   return (
-    <section style={{
-      padding: "80px 0 112px",
-      backgroundColor: "#1A1A1A",
-      position: "relative",
-      overflow: "hidden"
-    }}>
-      <div style={{
-        position: "absolute",
-        left: "50%",
-        top: 0,
-        width: "384px",
-        height: "384px",
-        backgroundColor: "rgba(126, 51, 255, 0.1)",
-        borderRadius: "50%",
-        filter: "blur(120px)",
-        transform: "translateX(-50%)"
-      }} />
+    <section className="segmentation-section">
+      <div className="segmentation-glow" />
       
-      <div style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "0 16px",
-        position: "relative",
-        zIndex: 10
-      }}>
+      <div className="segmentation-container">
         <div>
-          <h2 style={{
-            fontSize: "clamp(1.875rem, 4vw, 3rem)",
-            fontWeight: 700,
-            textAlign: "center",
-            marginBottom: "48px",
-            color: "#FFFFFF",
-            fontFamily: "'Poppins', sans-serif"
-          }}>
-            <span style={{ color: "#FF7734" }}>✦</span> Se você...
+          <h2 className="segmentation-title">
+            <span className="orange-text">✦</span> Se você...
           </h2>
 
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "20px",
-            maxWidth: "1000px",
-            margin: "0 auto 32px"
-          }}>
+          <div className="segmentation-grid">
             {segments.map((segment, index) => (
-              <div
-                key={index}
-                style={{
-                  backgroundColor: "rgba(26, 26, 26, 0.6)",
-                  backdropFilter: "blur(24px)",
-                  border: "1px solid rgba(51, 51, 51, 0.3)",
-                  borderRadius: "16px",
-                  padding: "24px",
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "16px"
-                }}
-              >
-                <div style={{
-                  flexShrink: 0,
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "12px",
-                  background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "24px"
-                }}>
+              <div key={index} className="segment-card">
+                <div className="segment-icon">
                   {segment.icon}
                 </div>
-                <p style={{
-                  color: "rgba(244, 245, 247, 0.9)",
-                  lineHeight: 1.6,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
+                <p className="segment-text">
                   {segment.text}
                 </p>
               </div>
             ))}
           </div>
 
-          <p style={{
-            textAlign: "center",
-            color: "rgba(179, 179, 179, 1)",
-            fontSize: "18px",
-            marginBottom: "32px",
-            maxWidth: "560px",
-            margin: "0 auto 32px",
-            fontFamily: "'Poppins', sans-serif"
-          }}>
+          <p className="segmentation-subtitle">
             Esse aulão foi feito especialmente para você
           </p>
 
-          <div style={{ textAlign: "center" }}>
+          <div className="segmentation-cta">
             <a
               href="#oferta"
               onClick={(e) => { e.preventDefault(); handleClick(); }}
-              style={{
-                background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
-                padding: "20px 40px",
-                borderRadius: "12px",
-                fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                color: "#FFFFFF",
-                boxShadow: "0 0 40px rgba(255, 10, 215, 0.4)",
-                display: "inline-block",
-                textAlign: "center",
-                textDecoration: "none",
-                cursor: "pointer",
-                fontFamily: "'Poppins', sans-serif"
-              }}
+              className="cta-button"
             >
               GARANTA SEU INGRESSO AGORA
             </a>

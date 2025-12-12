@@ -28,81 +28,26 @@ const discoveries = [
 
 const DiscoverySection = () => {
   return (
-    <section style={{
-      padding: "80px 0 112px",
-      backgroundColor: "#000000",
-      position: "relative",
-      overflow: "hidden"
-    }}>
-      <div style={{
-        position: "absolute",
-        right: 0,
-        bottom: 0,
-        width: "320px",
-        height: "320px",
-        backgroundColor: "rgba(255, 10, 215, 0.1)",
-        borderRadius: "50%",
-        filter: "blur(100px)"
-      }} />
+    <section className="discovery-section">
+      <div className="discovery-glow" />
       
-      <div style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "0 16px",
-        position: "relative",
-        zIndex: 10
-      }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-          <h2 style={{
-            fontSize: "clamp(1.875rem, 4vw, 3rem)",
-            fontWeight: 700,
-            textAlign: "center",
-            marginBottom: "48px",
-            color: "#FFFFFF",
-            fontFamily: "'Poppins', sans-serif"
-          }}>
+      <div className="discovery-container">
+        <div className="discovery-content">
+          <h2 className="discovery-title">
             No Aulão Inglês Lucrativo, você vai{" "}
-            <span style={{
-              background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text"
-            }}>descobrir:</span>
+            <span className="gradient-text">descobrir:</span>
           </h2>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          <div className="discovery-list">
             {discoveries.map((item, index) => (
-              <div
-                key={index}
-                style={{
-                  backgroundColor: "rgba(26, 26, 26, 0.6)",
-                  backdropFilter: "blur(24px)",
-                  border: "1px solid rgba(51, 51, 51, 0.3)",
-                  borderRadius: "16px",
-                  padding: "24px 32px"
-                }}
-              >
-                <div style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "24px"
-                }}>
-                  <span style={{ fontSize: "clamp(1.875rem, 3vw, 2.25rem)" }}>{item.emoji}</span>
+              <div key={index} className="discovery-card">
+                <div className="discovery-card-inner">
+                  <span className="discovery-emoji">{item.emoji}</span>
                   <div>
-                    <h3 style={{
-                      fontSize: "clamp(1.125rem, 1.5vw, 1.25rem)",
-                      fontWeight: 700,
-                      color: "#FFFFFF",
-                      marginBottom: "8px",
-                      fontFamily: "'Poppins', sans-serif"
-                    }}>
+                    <h3 className="discovery-card-title">
                       {item.title}
                     </h3>
-                    <p style={{
-                      color: "rgba(179, 179, 179, 1)",
-                      lineHeight: 1.6,
-                      fontFamily: "'Poppins', sans-serif"
-                    }}>
+                    <p className="discovery-card-desc">
                       {item.description}
                     </p>
                   </div>
@@ -111,25 +56,12 @@ const DiscoverySection = () => {
             ))}
           </div>
 
-          <div style={{ marginTop: "48px", textAlign: "center" }}>
-            <p style={{
-              fontSize: "clamp(1.25rem, 2vw, 1.5rem)",
-              color: "rgba(244, 245, 247, 0.8)",
-              lineHeight: 1.7,
-              maxWidth: "768px",
-              margin: "0 auto",
-              fontFamily: "'Poppins', sans-serif"
-            }}>
+          <div className="discovery-footer">
+            <p className="discovery-footer-text">
               Nada de conteúdo engessado. É{" "}
-              <span style={{ color: "#FF7734", fontWeight: 600 }}>papo reto</span> sobre dinheiro, 
+              <span className="orange-text">papo reto</span> sobre dinheiro, 
               liberdade e o poder de usar seu inglês com{" "}
-              <span style={{
-                background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                fontWeight: 600
-              }}>estratégia.</span>
+              <span className="gradient-text" style={{ fontWeight: 600 }}>estratégia.</span>
             </p>
           </div>
         </div>
