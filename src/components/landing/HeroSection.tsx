@@ -1,17 +1,14 @@
 import { motion } from "framer-motion";
-import Ticker from "./Ticker";
 import CTAButton from "./CTAButton";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-hero overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-b from-gradient-purple via-gradient-purple/80 to-background overflow-hidden">
       {/* Glow effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-pink/20 rounded-full blur-[120px]" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-purple/30 rounded-full blur-[100px]" />
       
-      <Ticker />
-      
-      <div className="container relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-44px)] py-16 text-center">
+      <div className="container relative z-10 flex flex-col items-center justify-center min-h-screen py-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
