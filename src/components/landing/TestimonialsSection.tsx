@@ -1,49 +1,20 @@
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import depoimento1 from "@/assets/new-depoimento1.webp";
+import depoimento2 from "@/assets/new-depoimento2.webp";
+import depoimento3 from "@/assets/new-depoimento3.webp";
+import depoimento4 from "@/assets/new-depoimento4.webp";
+import depoimento5 from "@/assets/new-depoimento5.webp";
+import depoimento6 from "@/assets/new-depoimento6.webp";
+import depoimento7 from "@/assets/new-depoimento7.webp";
 
-const testimonials = [
-  {
-    name: "Mariana Silva",
-    role: "Ex-CLT, agora tradutora freelancer",
-    avatar: "MS",
-    text: "Eu trabalhava em escritório e tinha inglês parado. Depois da imersão, consegui meus primeiros clientes em menos de 2 meses. Hoje faturo mais de R$4.000 por mês, de casa.",
-    rating: 5,
-  },
-  {
-    name: "Ricardo Almeida",
-    role: "Tradutor há 1 ano",
-    avatar: "RA",
-    text: "A Naluzz mostrou um caminho que eu não sabia que existia. Sem enrolação, sem promessa milagrosa — só método e trabalho. Hoje trabalho 4h por dia e tenho mais qualidade de vida.",
-    rating: 5,
-  },
-  {
-    name: "Fernanda Costa",
-    role: "Mãe e tradutora",
-    avatar: "FC",
-    text: "Consegui conciliar o trabalho com a maternidade. Traduzo enquanto minha filha dorme e já paguei todas as contas do mês só com tradução. Melhor decisão que tomei.",
-    rating: 5,
-  },
-  {
-    name: "Carlos Eduardo",
-    role: "Ex-professor de inglês",
-    avatar: "CE",
-    text: "Eu dava aula particular e ganhava pouco. Hoje faturo 3x mais trabalhando menos. O conteúdo da Naluzz é direto ao ponto, sem encher linguiça.",
-    rating: 5,
-  },
-  {
-    name: "Amanda Ribeiro",
-    role: "Estudante de tradução",
-    avatar: "AR",
-    text: "Estava perdida na faculdade, sem saber como entrar no mercado. A imersão me deu clareza total. Já estou fazendo meus primeiros trabalhos pagos!",
-    rating: 5,
-  },
-  {
-    name: "Paulo Henrique",
-    role: "Tradutor audiovisual",
-    avatar: "PH",
-    text: "Descobri o nicho de legendagem e nunca mais olhei pra trás. Trabalho com séries e documentários, de casa, ganhando em dólar. Obrigado, Naluzz!",
-    rating: 5,
-  },
+const screenshotTestimonials = [
+  depoimento1,
+  depoimento2,
+  depoimento3,
+  depoimento4,
+  depoimento5,
+  depoimento6,
+  depoimento7,
 ];
 
 const TestimonialsSection = () => {
@@ -69,41 +40,66 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+        {/* Video Testimonials */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="glass-card rounded-2xl overflow-hidden"
+          >
+            <div style={{ position: "relative", paddingTop: "177.5%" }}>
+              <iframe
+                id="panda-2eebd962-41ee-431e-aeeb-ef6dd9f4d985"
+                src="https://player-vz-885b350e-f0f.tv.pandavideo.com.br/embed/?v=2eebd962-41ee-431e-aeeb-ef6dd9f4d985"
+                style={{ border: "none", position: "absolute", top: 0, left: 0 }}
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                allowFullScreen
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="glass-card rounded-2xl overflow-hidden"
+          >
+            <div style={{ position: "relative", paddingTop: "177.63713080168776%" }}>
+              <iframe
+                id="panda-68b92a47-028e-41e2-a518-f0f9b924ef78"
+                src="https://player-vz-885b350e-f0f.tv.pandavideo.com.br/embed/?v=68b92a47-028e-41e2-a518-f0f9b924ef78"
+                style={{ border: "none", position: "absolute", top: 0, left: 0 }}
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                allowFullScreen
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Screenshot Testimonials */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {screenshotTestimonials.map((img, index) => (
             <motion.div
-              key={testimonial.name}
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card p-6 relative group hover:border-primary/50 transition-colors"
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="glass-card rounded-xl overflow-hidden hover:border-primary/50 transition-colors"
             >
-              {/* Quote icon */}
-              <Quote className="w-8 h-8 text-primary/30 absolute top-4 right-4" />
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-highlight-orange text-highlight-orange" />
-                ))}
-              </div>
-
-              {/* Text */}
-              <p className="text-foreground/90 text-sm md:text-base leading-relaxed mb-6">
-                "{testimonial.text}"
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center text-foreground font-bold text-sm">
-                  {testimonial.avatar}
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground text-sm">{testimonial.name}</p>
-                  <p className="text-muted-foreground text-xs">{testimonial.role}</p>
-                </div>
-              </div>
+              <img
+                src={img}
+                alt={`Depoimento de aluno ${index + 1}`}
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </motion.div>
           ))}
         </div>

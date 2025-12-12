@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Users, Globe, BookOpen } from "lucide-react";
+import imgExpert from "@/assets/img-expert.webp";
 
 const stats = [
   { icon: Users, value: "+10.000", label: "Alunos formados" },
@@ -13,7 +14,7 @@ const BioSection = () => {
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-          {/* Image placeholder */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -21,11 +22,11 @@ const BioSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-gradient-pink/20 border border-primary/30">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden">
               <img
-                src="https://placehold.co/600x800/1a1a1a/7E33FF?text=Naluzz"
+                src={imgExpert}
                 alt="Naluzz - Especialista em Tradução"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             {/* Decorative glow */}
