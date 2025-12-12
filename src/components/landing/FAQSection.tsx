@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -49,35 +44,113 @@ const faqs = [
 ];
 
 const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-12">
-          <span className="text-highlight-orange font-semibold text-sm uppercase tracking-wider">
+    <section style={{
+      padding: "64px 0 96px",
+      backgroundColor: "#000000"
+    }}>
+      <div style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "0 16px"
+      }}>
+        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+          <span style={{
+            color: "#FF7734",
+            fontWeight: 600,
+            fontSize: "14px",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
             Dúvidas frequentes
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-            Perguntas <span className="gradient-text">Frequentes</span>
+          <h2 style={{
+            fontSize: "clamp(1.875rem, 4vw, 3rem)",
+            fontWeight: 700,
+            color: "#FFFFFF",
+            marginTop: "16px",
+            marginBottom: "24px",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
+            Perguntas{" "}
+            <span style={{
+              background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text"
+            }}>Frequentes</span>
           </h2>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+        <div style={{ maxWidth: "768px", margin: "0 auto" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             {faqs.map((faq, index) => (
-              <AccordionItem
+              <div
                 key={index}
-                value={`item-${index}`}
-                className="glass-card rounded-xl px-6 border-border/50 data-[state=open]:border-primary/50 transition-colors"
+                style={{
+                  backgroundColor: "rgba(26, 26, 26, 0.6)",
+                  backdropFilter: "blur(24px)",
+                  border: openIndex === index ? "1px solid rgba(126, 51, 255, 0.5)" : "1px solid rgba(51, 51, 51, 0.5)",
+                  borderRadius: "12px",
+                  padding: "0 24px",
+                  overflow: "hidden",
+                  transition: "border-color 0.3s"
+                }}
               >
-                <AccordionTrigger className="text-foreground text-left font-semibold text-base md:text-lg py-5 hover:no-underline hover:text-primary">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-base pb-5">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "20px 0",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    textAlign: "left"
+                  }}
+                >
+                  <span style={{
+                    color: "#FFFFFF",
+                    fontWeight: 600,
+                    fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
+                    paddingRight: "16px",
+                    fontFamily: "'Poppins', sans-serif"
+                  }}>
+                    {faq.question}
+                  </span>
+                  <span style={{
+                    color: "#7E33FF",
+                    fontSize: "24px",
+                    transform: openIndex === index ? "rotate(180deg)" : "rotate(0)",
+                    transition: "transform 0.3s"
+                  }}>
+                    ▼
+                  </span>
+                </button>
+                {openIndex === index && (
+                  <div style={{
+                    paddingBottom: "20px",
+                    color: "rgba(179, 179, 179, 1)",
+                    fontSize: "16px",
+                    lineHeight: 1.7,
+                    whiteSpace: "pre-line",
+                    fontFamily: "'Poppins', sans-serif"
+                  }}>
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
             ))}
-          </Accordion>
+          </div>
         </div>
       </div>
     </section>

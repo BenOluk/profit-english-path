@@ -18,24 +18,68 @@ const screenshotTestimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-card/50">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-12 md:mb-16">
-          <span className="text-highlight-orange font-semibold text-sm uppercase tracking-wider">
+    <section style={{
+      padding: "64px 0 96px",
+      backgroundColor: "rgba(26, 26, 26, 0.5)"
+    }}>
+      <div style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "0 16px"
+      }}>
+        <div style={{ textAlign: "center", marginBottom: "64px" }}>
+          <span style={{
+            color: "#FF7734",
+            fontWeight: 600,
+            fontSize: "14px",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
             Depoimentos reais
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
+          <h2 style={{
+            fontSize: "clamp(1.875rem, 4vw, 3rem)",
+            fontWeight: 700,
+            color: "#FFFFFF",
+            marginTop: "16px",
+            marginBottom: "24px",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
             Pessoas comuns,{" "}
-            <span className="gradient-text">resultados extraordinários</span>
+            <span style={{
+              background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text"
+            }}>resultados extraordinários</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p style={{
+            color: "rgba(179, 179, 179, 1)",
+            fontSize: "18px",
+            maxWidth: "640px",
+            margin: "0 auto",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
             Veja o que dizem os alunos que já transformaram seu inglês em renda real
           </p>
         </div>
 
         {/* Video Testimonials */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
-          <div className="glass-card rounded-2xl overflow-hidden">
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "24px",
+          maxWidth: "768px",
+          margin: "0 auto 48px"
+        }}>
+          <div style={{
+            backgroundColor: "rgba(26, 26, 26, 0.6)",
+            backdropFilter: "blur(24px)",
+            border: "1px solid rgba(51, 51, 51, 0.3)",
+            borderRadius: "16px",
+            overflow: "hidden"
+          }}>
             <div style={{ position: "relative", paddingTop: "177.5%" }}>
               <iframe
                 id="panda-2eebd962-41ee-431e-aeeb-ef6dd9f4d985"
@@ -49,7 +93,13 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
-          <div className="glass-card rounded-2xl overflow-hidden">
+          <div style={{
+            backgroundColor: "rgba(26, 26, 26, 0.6)",
+            backdropFilter: "blur(24px)",
+            border: "1px solid rgba(51, 51, 51, 0.3)",
+            borderRadius: "16px",
+            overflow: "hidden"
+          }}>
             <div style={{ position: "relative", paddingTop: "177.63713080168776%" }}>
               <iframe
                 id="panda-68b92a47-028e-41e2-a518-f0f9b924ef78"
@@ -65,16 +115,26 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Screenshot Testimonials */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+          gap: "16px"
+        }}>
           {screenshotTestimonials.map((img, index) => (
             <div
               key={index}
-              className="glass-card rounded-xl overflow-hidden hover:border-primary/50 transition-colors"
+              style={{
+                backgroundColor: "rgba(26, 26, 26, 0.6)",
+                backdropFilter: "blur(24px)",
+                border: "1px solid rgba(51, 51, 51, 0.3)",
+                borderRadius: "12px",
+                overflow: "hidden"
+              }}
             >
               <img
                 src={img}
                 alt={`Depoimento de aluno ${index + 1}`}
-                className="w-full h-auto"
+                style={{ width: "100%", height: "auto" }}
                 loading="lazy"
               />
             </div>

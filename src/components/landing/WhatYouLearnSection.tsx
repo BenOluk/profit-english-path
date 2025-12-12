@@ -1,6 +1,3 @@
-import { Check } from "lucide-react";
-import CTAButton from "./CTAButton";
-
 const learnings = [
   "Como esse mercado realmente funciona",
   "Como começar do jeito certo",
@@ -8,48 +5,143 @@ const learnings = [
 ];
 
 const WhatYouLearnSection = () => {
+  const handleClick = () => {
+    document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="py-20 md:py-28 bg-card relative overflow-hidden">
-      <div className="absolute right-0 top-1/4 w-80 h-80 bg-gradient-pink/10 rounded-full blur-[100px]" />
-      <div className="absolute left-0 bottom-1/4 w-60 h-60 bg-primary/10 rounded-full blur-[80px]" />
+    <section style={{
+      padding: "80px 0 112px",
+      backgroundColor: "#1A1A1A",
+      position: "relative",
+      overflow: "hidden"
+    }}>
+      <div style={{
+        position: "absolute",
+        right: 0,
+        top: "25%",
+        width: "320px",
+        height: "320px",
+        backgroundColor: "rgba(255, 10, 215, 0.1)",
+        borderRadius: "50%",
+        filter: "blur(100px)"
+      }} />
+      <div style={{
+        position: "absolute",
+        left: 0,
+        bottom: "25%",
+        width: "240px",
+        height: "240px",
+        backgroundColor: "rgba(126, 51, 255, 0.1)",
+        borderRadius: "50%",
+        filter: "blur(80px)"
+      }} />
       
-      <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+      <div style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "0 16px",
+        position: "relative",
+        zIndex: 10
+      }}>
+        <div style={{ maxWidth: "768px", margin: "0 auto", textAlign: "center" }}>
+          <h2 style={{
+            fontSize: "clamp(2.25rem, 4vw, 3.75rem)",
+            fontWeight: 700,
+            marginBottom: "24px",
+            color: "#FFFFFF",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
             A verdade é:
           </h2>
           
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12">
-            Você pode começar <span className="text-highlight-orange font-semibold">agora</span>, com o inglês que já sabe, e transformar isso em uma fonte real de renda — mesmo que esteja começando do zero na área.
+          <p style={{
+            fontSize: "clamp(1.125rem, 1.5vw, 1.25rem)",
+            color: "rgba(179, 179, 179, 1)",
+            lineHeight: 1.7,
+            marginBottom: "48px",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
+            Você pode começar <span style={{ color: "#FF7734", fontWeight: 600 }}>agora</span>, com o inglês que já sabe, e transformar isso em uma fonte real de renda — mesmo que esteja começando do zero na área.
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-8">
+          <h3 style={{
+            fontSize: "clamp(1.25rem, 2vw, 1.5rem)",
+            fontWeight: 700,
+            color: "#FFFFFF",
+            marginBottom: "32px",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
             No Aulão Inglês Lucrativo, você aprende:
           </h3>
 
-          <div className="space-y-4 mb-10">
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "40px" }}>
             {learnings.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 text-left"
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "16px",
+                  textAlign: "left"
+                }}
               >
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/30 flex items-center justify-center mt-1">
-                  <Check className="w-4 h-4 text-primary" />
+                <div style={{
+                  flexShrink: 0,
+                  width: "24px",
+                  height: "24px",
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(126, 51, 255, 0.3)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginTop: "4px"
+                }}>
+                  <span style={{ color: "#7E33FF", fontSize: "14px" }}>✓</span>
                 </div>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                <p style={{
+                  fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
+                  color: "rgba(179, 179, 179, 1)",
+                  lineHeight: 1.7,
+                  fontFamily: "'Poppins', sans-serif"
+                }}>
                   {item}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="space-y-4">
-            <p className="text-highlight-orange font-semibold text-lg">
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "center" }}>
+            <p style={{
+              color: "#FF7734",
+              fontWeight: 600,
+              fontSize: "18px",
+              fontFamily: "'Poppins', sans-serif"
+            }}>
               ➜ Aulão Inglês Lucrativo - Acesso Imediato
             </p>
-            <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })} className="mx-auto">
+            <a
+              href="#oferta"
+              onClick={(e) => { e.preventDefault(); handleClick(); }}
+              style={{
+                background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
+                padding: "20px 40px",
+                borderRadius: "12px",
+                fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+                color: "#FFFFFF",
+                boxShadow: "0 0 40px rgba(255, 10, 215, 0.4)",
+                display: "inline-block",
+                textAlign: "center",
+                textDecoration: "none",
+                cursor: "pointer",
+                fontFamily: "'Poppins', sans-serif"
+              }}
+            >
               QUERO ACESSAR O AULÃO AGORA
-            </CTAButton>
+            </a>
           </div>
         </div>
       </div>
