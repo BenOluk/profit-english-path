@@ -75,7 +75,7 @@ const SegmentationSection = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center"
           >
-            <CTAButton>GARANTA SEU INGRESSO AGORA</CTAButton>
+            <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}>GARANTA SEU INGRESSO AGORA</CTAButton>
           </motion.div>
         </motion.div>
       </div>
