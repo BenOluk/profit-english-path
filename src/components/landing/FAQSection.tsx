@@ -8,34 +8,44 @@ import {
 
 const faqs = [
   {
-    question: "Preciso ter inglês fluente para participar?",
+    question: "Como saber se meu conhecimento de inglês (ou outro segundo idioma) é suficiente para trabalhar com tradução?",
     answer:
-      "Não! A imersão é voltada para pessoas com inglês intermediário ou avançado. Se você consegue entender filmes/séries sem legenda e se comunicar em inglês básico, já está pronto para começar.",
+      "O que eu sempre falo pro pessoal quando me perguntam isso na caixinha de perguntas do Instagram é o seguinte: se seu inglês (ou qualquer outro segundo idioma) é bom o suficiente para você ouvir músicas estrangeiras e entendê-las; se você consegue assistir às séries que gosta sem depender de legenda; e se você gosta de aprender coisas novas, seu conhecimento é suficiente sim para começar.\n\nO Tradutor Profissional não precisa saber TUDO de seus idiomas de trabalho. Temos ferramentas que podem nos ajudar durante os projetos, quando encontramos uma palavra que nunca vimos na vida. (PS: isso acontece com seu idioma materno também. Você talvez não conheça a palavra \"estapafúrdio\", e nem por isso você duvidaria da sua capacidade de falar português, certo? 🙂)",
   },
   {
-    question: "A imersão é realmente gratuita?",
+    question: "Na Imersão, você explica como conseguir clientes? Essa é minha maior insegurança.",
     answer:
-      "Sim, 100% gratuita! Você terá acesso completo ao conteúdo ao vivo e ao replay por tempo limitado, sem precisar pagar nada.",
+      "Sim, na imersão, eu dou algumas estratégias iniciais de prospecção para você saber por onde começar. No material complementar opcional Dashboard do Tradutor Iniciante, você recebe um checklist de sites para usar em sua rotina de prospecção. Acrescente ao seu ingresso se desejar.\n\nVocê também recebe um Bônus exclusivo para te ajudar a fechar seus primeiros trabalhos de tradução: a HOT LIST, uma lista de 25 sites altamente indicados para você prospectar clientes e começar a fazer dinheiro como tradutor profissional.",
   },
   {
-    question: "Preciso ter formação em Letras ou Tradução?",
+    question: "Meu segundo idioma não é o inglês, posso participar da Imersão Inglês Lucrativo mesmo assim?",
     answer:
-      "Absolutamente não! A maioria dos tradutores bem-sucedidos não tem diploma na área. O que importa é dominar o idioma e aprender as técnicas certas — e é exatamente isso que você vai descobrir na imersão.",
+      "Claro! O Inglês Lucrativo não é uma aula de idiomas; ele é uma imersão que te orienta para iniciar como tradutor. Inscreva-se no Inglês Lucrativo para aprender os primeiros passos para usar o segundo idioma que você já sabe e transformá-lo numa ferramenta de trabalho. Aprenda o que você precisa saber sobre o mercado de tradução, programas e recursos que vão te ajudar a entregar qualidade em suas traduções, técnicas de prospecção de clientes e orientações para saber como precificar o trabalho.",
   },
   {
-    question: "Quanto tempo dura a imersão?",
+    question: "Não tenho muito tempo sobrando, a Imersão é muito longa?",
     answer:
-      "A transmissão ao vivo tem duração aproximada de 2 a 3 horas, com conteúdo denso e prático. Você também terá acesso ao replay para assistir no seu ritmo.",
+      "A Imersão Inglês Lucrativo foi criada para entregar o máximo de conteúdo possível em aproximadamente 4h de forma leve e descontraída, ideal para jovens que têm PRESSA de fazer dinheiro. Por isso, é uma imersão relativamente curta sem ser superficial, e você não precisa de muita disponibilidade para assistir. Em pouco menos de 4h, você consegue assistir a todo o conteúdo da imersão e ainda tem acesso a um convite especial para levar seus estudos adiante de forma profissionalizante. Você também pode aplicar os conteúdos da imersão com a ajuda do material complementar opcional Dashboard do TRADUTOR INICIANTE, que você poderá acrescentar ao seu ingresso se desejar.",
   },
   {
-    question: "Vou aprender a conseguir clientes?",
+    question: "Em quanto tempo consigo fazer dinheiro com essas habilidades?",
     answer:
-      "Sim! Um dos principais tópicos da imersão é mostrar onde estão os clientes e como se posicionar para conseguir trabalhos, mesmo começando do zero.",
+      "Tenho relatos de alunos que, apenas 30 dias após começarem a estudar com a gente, já tinham fechado seu primeiro cliente na profissão da Tradução. A velocidade do resultado depende do quanto você vai se dedicar à prospecção de clientes e à busca por oportunidades que se encaixam no que você deseja. Muitos alunos nossos têm \"sangue nos olhos\" e se jogam com vontade, conseguindo resultados super rapidamente. Enquanto outros procrastinam e cedem ao autoboicote, e acabam demorando para ter resultado. Qual tipo de aluno você pretende ser? Aquele que faz o que tem que ser feito e constrói resultado, ou aquele que espera o cliente cair do céu?",
   },
   {
-    question: "A profissão de tradutor ainda vale a pena com a IA?",
+    question: "Quanto tempo de acesso?",
     answer:
-      "Mais do que nunca! A IA eliminou apenas os tradutores rasos. Para trabalhos de qualidade, empresas e clientes ainda precisam de profissionais capacitados. Você vai entender exatamente como se posicionar nesse novo cenário.",
+      "A Imersão Inglês Lucrativo é um conteúdo online criado pra pessoas que têm pressa pra mudar de vida. Por isso, não queremos que você se enrole pra assistir!\n\nSeu ingresso te dá direito a 15 dias de acesso ao conteúdo, sendo que você pode começar AGORA MESMO, com o acesso imediato liberado logo após a confirmação do pagamento do ingresso.\n\nEntão, se não tiver disponibilidade pra começar HOJE a assistir, organize-se para assistir nos próximos 15 dias.\n\nVocê também tem a opção de adquirir o Resumão escrito da imersão no Notion, que poderá ser salvo na sua conta do Notion pra você guardar pra sempre e consultar a qualquer momento após seus 15 dias de acesso. Acrescente este e outros materiais complementares opcionais ao seu ingresso se desejar.",
+  },
+  {
+    question: "A Imersão é só para quem nunca traduziu antes? Ou quem tem experiência também pode fazer?",
+    answer:
+      "A Imersão Inglês Lucrativo foi pensada para pessoas iniciantes no mercado da Tradução. Por isso, quem mais se beneficia deste conteúdo é a pessoa que não tem experiência no mercado da Tradução como profissional qualificado, ou pessoas que estão desatualizadas e desejam se informar sobre as tendências atuais do mercado.",
+  },
+  {
+    question: "Como faço para assistir à Imersão Inglês Lucrativo?",
+    answer:
+      "Após finalizar sua matrícula, você receberá um e-mail com os dados de acesso no seu e-mail cadastrado na matrícula do Ingresso.",
   },
 ];
 
