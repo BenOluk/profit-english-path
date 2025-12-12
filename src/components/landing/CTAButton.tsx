@@ -9,7 +9,7 @@ interface CTAButtonProps {
 }
 
 const CTAButton = ({ children, className = "", href, onClick }: CTAButtonProps) => {
-  const baseClasses = `gradient-primary px-8 py-4 md:px-10 md:py-5 rounded-xl text-base md:text-lg font-bold uppercase tracking-wide text-foreground shadow-lg glow-pink transition-all duration-300 hover:brightness-110 inline-block text-center animate-button-pulse ${className}`;
+  const baseClasses = `gradient-primary px-8 py-4 md:px-10 md:py-5 rounded-xl text-base md:text-lg font-bold uppercase tracking-wide text-foreground shadow-lg glow-pink transition-all duration-300 hover:brightness-110 inline-block text-center ${className}`;
 
   if (href) {
     return (

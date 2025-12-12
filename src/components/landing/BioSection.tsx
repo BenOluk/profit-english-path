@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import imgExpert from "@/assets/img-expert.webp";
 
 const BioSection = () => {
@@ -7,16 +8,28 @@ const BioSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             {/* Image */}
-            <div className="w-full md:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="w-full md:w-1/2"
+            >
               <img
                 src={imgExpert}
                 alt="Naluzz - Tradutora Multitrampo"
                 className="w-full max-w-md mx-auto md:mx-0"
               />
-            </div>
+            </motion.div>
 
             {/* Content */}
-            <div className="w-full md:w-1/2 text-center md:text-left">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-full md:w-1/2 text-center md:text-left"
+            >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 uppercase tracking-wide">
                 Meet Your Teacher!
               </h2>
@@ -43,7 +56,7 @@ const BioSection = () => {
                   quantas horas quiser, nos dias em que quiser, sem precisar de diploma e sem precisar ser professor de inglês.
                 </strong>
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

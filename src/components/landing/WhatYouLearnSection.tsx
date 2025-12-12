@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import CTAButton from "./CTAButton";
 
@@ -14,7 +15,13 @@ const WhatYouLearnSection = () => {
       <div className="absolute left-0 bottom-1/4 w-60 h-60 bg-primary/10 rounded-full blur-[80px]" />
       
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center"
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             A verdade é:
           </h2>
@@ -29,8 +36,12 @@ const WhatYouLearnSection = () => {
 
           <div className="space-y-4 mb-10">
             {learnings.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.15 }}
                 className="flex items-start gap-4 text-left"
               >
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/30 flex items-center justify-center mt-1">
@@ -39,7 +50,7 @@ const WhatYouLearnSection = () => {
                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   {item}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -51,7 +62,7 @@ const WhatYouLearnSection = () => {
               QUERO ACESSAR O AULÃO AGORA
             </CTAButton>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

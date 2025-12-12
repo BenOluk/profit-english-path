@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Clock, Home, GraduationCap } from "lucide-react";
 
 const features = [
@@ -25,9 +26,13 @@ const FeaturesSection = () => {
       
       <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {features.map((feature) => (
-            <div
+          {features.map((feature, index) => (
+            <motion.div
               key={feature.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               className="glass-card p-8 text-center group hover:border-gradient-pink/50 transition-all duration-300"
             >
               <div className="w-16 h-16 mx-auto mb-6 rounded-2xl gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -39,7 +44,7 @@ const FeaturesSection = () => {
               <p className="text-muted-foreground text-base">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
