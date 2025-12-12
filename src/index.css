@@ -135,4 +135,19 @@
   .glow-purple {
     box-shadow: 0 0 60px hsl(var(--gradient-purple) / 0.3);
   }
+
+  .animate-button-pulse {
+    animation: button-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes button-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 40px hsl(var(--gradient-pink) / 0.4);
+    }
+    50% {
+      transform: scale(1.02);
+      box-shadow: 0 0 50px hsl(var(--gradient-pink) / 0.6);
+    }
+  }
 }
