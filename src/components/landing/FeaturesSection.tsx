@@ -1,18 +1,16 @@
-import { Clock, Home, GraduationCap } from "lucide-react";
-
 const features = [
   {
-    icon: Clock,
+    icon: "🕐",
     title: "Trabalhe só 3h por dia",
     description: "Mais leveza, mais tempo pra você",
   },
   {
-    icon: Home,
+    icon: "🏠",
     title: "100% Home Office",
     description: "Clientes do mundo todo, você no seu sofá",
   },
   {
-    icon: GraduationCap,
+    icon: "🎓",
     title: "Sem diploma, sem enrolação",
     description: "Você já tem o que precisa pra começar agora",
   },
@@ -20,23 +18,69 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-hero/10 to-transparent" />
+    <section style={{
+      padding: "80px 0 112px",
+      backgroundColor: "#000000",
+      position: "relative",
+      overflow: "hidden"
+    }}>
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(to bottom, rgba(126, 51, 255, 0.1), transparent)"
+      }} />
       
-      <div className="container relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {features.map((feature) => (
+      <div style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "0 16px",
+        position: "relative",
+        zIndex: 10
+      }}>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "32px"
+        }}>
+          {features.map((feature, index) => (
             <div
-              key={feature.title}
-              className="glass-card p-8 text-center group hover:border-gradient-pink/50 transition-all duration-300"
+              key={index}
+              style={{
+                backgroundColor: "rgba(26, 26, 26, 0.6)",
+                backdropFilter: "blur(24px)",
+                border: "1px solid rgba(51, 51, 51, 0.3)",
+                borderRadius: "16px",
+                padding: "32px",
+                textAlign: "center"
+              }}
             >
-              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="w-8 h-8 text-foreground" />
+              <div style={{
+                width: "64px",
+                height: "64px",
+                margin: "0 auto 24px",
+                borderRadius: "16px",
+                background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "32px"
+              }}>
+                {feature.icon}
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+              <h3 style={{
+                fontSize: "clamp(1.25rem, 2vw, 1.5rem)",
+                fontWeight: 700,
+                color: "#FFFFFF",
+                marginBottom: "12px",
+                fontFamily: "'Poppins', sans-serif"
+              }}>
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground text-base">
+              <p style={{
+                color: "rgba(179, 179, 179, 1)",
+                fontSize: "16px",
+                fontFamily: "'Poppins', sans-serif"
+              }}>
                 {feature.description}
               </p>
             </div>

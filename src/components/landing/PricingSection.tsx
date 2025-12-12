@@ -1,6 +1,3 @@
-import { Check, Gift } from "lucide-react";
-import CTAButton from "./CTAButton";
-
 const includedItems = [
   { text: "Acesso à Imersão Gravada de Tradução INGLÊS LUCRATIVO", highlight: true },
   { text: "15 dias de acesso: Libere seu acesso imediatamente e tenha 2 semanas pra assistir ao conteúdo", highlight: false },
@@ -9,73 +6,183 @@ const includedItems = [
 
 const PricingSection = () => {
   return (
-    <section id="oferta" className="py-16 md:py-24 bg-background relative overflow-hidden">
+    <section id="oferta" style={{
+      padding: "64px 0 96px",
+      backgroundColor: "#000000",
+      position: "relative",
+      overflow: "hidden"
+    }}>
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(to bottom, rgba(126, 51, 255, 0.05), transparent, transparent)"
+      }} />
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Comece seu <span className="gradient-text italic">aprendizado</span> aqui:
+      <div style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "0 16px",
+        position: "relative",
+        zIndex: 10
+      }}>
+        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+          <h2 style={{
+            fontSize: "clamp(1.875rem, 4vw, 3rem)",
+            fontWeight: 700,
+            color: "#FFFFFF",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
+            Comece seu{" "}
+            <span style={{
+              background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              fontStyle: "italic"
+            }}>aprendizado</span>{" "}
+            aqui:
           </h2>
         </div>
 
-        <div className="max-w-md mx-auto">
-          <div className="relative">
+        <div style={{ maxWidth: "448px", margin: "0 auto" }}>
+          <div style={{ position: "relative" }}>
             {/* Glow effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary via-gradient-pink to-primary rounded-3xl blur-xl opacity-40" />
+            <div style={{
+              position: "absolute",
+              inset: "-4px",
+              background: "linear-gradient(to right, #7E33FF, #FF0AD7, #7E33FF)",
+              borderRadius: "24px",
+              filter: "blur(16px)",
+              opacity: 0.4
+            }} />
 
             {/* Card */}
-            <div className="relative glass-card p-6 md:p-8 rounded-2xl border-2 border-primary/50">
+            <div style={{
+              position: "relative",
+              backgroundColor: "rgba(26, 26, 26, 0.6)",
+              backdropFilter: "blur(24px)",
+              padding: "32px",
+              borderRadius: "16px",
+              border: "2px solid rgba(126, 51, 255, 0.5)"
+            }}>
               {/* Included items */}
-              <div className="space-y-4 mb-8">
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "32px" }}>
                 {includedItems.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-start gap-3"
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "12px"
+                    }}
                   >
-                    <div className="w-5 h-5 rounded bg-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      {index === 2 ? (
-                        <Gift className="w-3 h-3 text-primary" />
-                      ) : (
-                        <Check className="w-3 h-3 text-primary" />
-                      )}
+                    <div style={{
+                      width: "20px",
+                      height: "20px",
+                      borderRadius: "4px",
+                      backgroundColor: "rgba(126, 51, 255, 0.3)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      marginTop: "2px"
+                    }}>
+                      <span style={{ color: "#7E33FF", fontSize: "12px" }}>
+                        {index === 2 ? "🎁" : "✓"}
+                      </span>
                     </div>
-                    <span className="text-foreground/90 text-sm leading-relaxed">
+                    <span style={{
+                      color: "rgba(255, 255, 255, 0.9)",
+                      fontSize: "14px",
+                      lineHeight: 1.6,
+                      fontFamily: "'Poppins', sans-serif"
+                    }}>
                       {index === 0 ? (
-                        <>Acesso à <span className="text-gradient-pink font-semibold underline">Imersão Gravada de Tradução INGLÊS LUCRATIVO</span></>
+                        <>Acesso à <span style={{ color: "#FF0AD7", fontWeight: 600, textDecoration: "underline" }}>Imersão Gravada de Tradução INGLÊS LUCRATIVO</span></>
                       ) : index === 1 ? (
-                        <><span className="font-semibold">15 dias de acesso:</span> Libere seu acesso imediatamente e tenha 2 semanas pra assistir ao conteúdo</>
+                        <><span style={{ fontWeight: 600 }}>15 dias de acesso:</span> Libere seu acesso imediatamente e tenha 2 semanas pra assistir ao conteúdo</>
                       ) : (
-                        <><span className="font-semibold">BÔNUS:</span> Hot List, uma lista com os 25 principais sites para você prospectar trabalhos de tradução.</>
+                        <><span style={{ fontWeight: 600 }}>BÔNUS:</span> Hot List, uma lista com os 25 principais sites para você prospectar trabalhos de tradução.</>
                       )}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <p className="text-muted-foreground text-sm text-center mb-4">
+              <p style={{
+                color: "rgba(179, 179, 179, 1)",
+                fontSize: "14px",
+                textAlign: "center",
+                marginBottom: "16px",
+                fontFamily: "'Poppins', sans-serif"
+              }}>
                 Garanta seu ingresso por apenas
               </p>
 
               {/* Price */}
-              <div className="text-center pb-6 border-b border-border/50">
-                <div className="flex items-baseline justify-center gap-2">
-                  <span className="text-4xl md:text-5xl font-bold text-foreground">R$ 25</span>
+              <div style={{
+                textAlign: "center",
+                paddingBottom: "24px",
+                borderBottom: "1px solid rgba(51, 51, 51, 0.5)"
+              }}>
+                <div style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  justifyContent: "center",
+                  gap: "8px"
+                }}>
+                  <span style={{
+                    fontSize: "clamp(2.25rem, 4vw, 3rem)",
+                    fontWeight: 700,
+                    color: "#FFFFFF",
+                    fontFamily: "'Poppins', sans-serif"
+                  }}>R$ 25</span>
                 </div>
-                <p className="text-muted-foreground text-sm mt-1">
+                <p style={{
+                  color: "rgba(179, 179, 179, 1)",
+                  fontSize: "14px",
+                  marginTop: "4px",
+                  fontFamily: "'Poppins', sans-serif"
+                }}>
                   à vista
                 </p>
-                <p className="text-muted-foreground text-xs mt-2">
+                <p style={{
+                  color: "rgba(179, 179, 179, 1)",
+                  fontSize: "12px",
+                  marginTop: "8px",
+                  fontFamily: "'Poppins', sans-serif"
+                }}>
                   ou 5x de R$ 5,54
                 </p>
               </div>
 
               {/* CTA */}
-              <div className="pt-6">
-                <CTAButton href="https://pay.kiwify.com.br/be0Jzax" className="w-full text-center justify-center">
+              <div style={{ paddingTop: "24px" }}>
+                <a
+                  href="https://pay.kiwify.com.br/be0Jzax"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
+                    padding: "20px 40px",
+                    borderRadius: "12px",
+                    fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                    color: "#FFFFFF",
+                    boxShadow: "0 0 40px rgba(255, 10, 215, 0.4)",
+                    display: "block",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    width: "100%",
+                    fontFamily: "'Poppins', sans-serif"
+                  }}
+                >
                   QUERO MEU INGRESSO + BÔNUS!
-                </CTAButton>
+                </a>
               </div>
             </div>
           </div>

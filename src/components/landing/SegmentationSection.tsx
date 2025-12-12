@@ -1,66 +1,153 @@
-import { Lightbulb, TrendingUp, MapPin, Coins, UserCheck, Zap } from "lucide-react";
-import CTAButton from "./CTAButton";
-
 const segments = [
   {
-    icon: Lightbulb,
+    icon: "💡",
     text: "Quer transformar seu inglês em dinheiro, não só em consumo de conteúdo. E cansou de estudar idioma pra ver série e nada mais.",
   },
   {
-    icon: TrendingUp,
+    icon: "📈",
     text: "Quer uma nova profissão ou uma fonte de renda extra. E quer reencontrar leveza, sem recomeçar do zero.",
   },
   {
-    icon: MapPin,
+    icon: "📍",
     text: "Quer sair da CLT e conquistar liberdade de tempo, geográfica e financeira. Sem virar influenciador ou empreender em algo que não faz sentido.",
   },
   {
-    icon: Coins,
+    icon: "💰",
     text: "Sente que desperdiçou tempo e dinheiro aprendendo inglês — e agora quer retorno monetizando uma habilidade que você já tem.",
   },
   {
-    icon: UserCheck,
+    icon: "✅",
     text: "Busca uma nova fonte de renda que pague bem e respeite sua individualidade. Sem chefe, sem rotina engessada, sem crachá.",
   },
   {
-    icon: Zap,
+    icon: "⚡",
     text: "Quer aprender algo aplicável, rápido e com retorno real. Sem 4 anos de faculdade, sem gastar com cursos técnicos, sem enrolação.",
   },
 ];
 
 const SegmentationSection = () => {
+  const handleClick = () => {
+    document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="py-20 md:py-28 bg-card relative overflow-hidden">
-      <div className="absolute left-1/2 top-0 w-96 h-96 bg-gradient-purple/10 rounded-full blur-[120px] -translate-x-1/2" />
+    <section style={{
+      padding: "80px 0 112px",
+      backgroundColor: "#1A1A1A",
+      position: "relative",
+      overflow: "hidden"
+    }}>
+      <div style={{
+        position: "absolute",
+        left: "50%",
+        top: 0,
+        width: "384px",
+        height: "384px",
+        backgroundColor: "rgba(126, 51, 255, 0.1)",
+        borderRadius: "50%",
+        filter: "blur(120px)",
+        transform: "translateX(-50%)"
+      }} />
       
-      <div className="container relative z-10">
+      <div style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "0 16px",
+        position: "relative",
+        zIndex: 10
+      }}>
         <div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
-            <span className="text-highlight">✦</span> Se você...
+          <h2 style={{
+            fontSize: "clamp(1.875rem, 4vw, 3rem)",
+            fontWeight: 700,
+            textAlign: "center",
+            marginBottom: "48px",
+            color: "#FFFFFF",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
+            <span style={{ color: "#FF7734" }}>✦</span> Se você...
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-8">
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "20px",
+            maxWidth: "1000px",
+            margin: "0 auto 32px"
+          }}>
             {segments.map((segment, index) => (
               <div
                 key={index}
-                className="glass-card p-6 flex items-start gap-4 group hover:border-gradient-pink/40 transition-all duration-300"
+                style={{
+                  backgroundColor: "rgba(26, 26, 26, 0.6)",
+                  backdropFilter: "blur(24px)",
+                  border: "1px solid rgba(51, 51, 51, 0.3)",
+                  borderRadius: "16px",
+                  padding: "24px",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "16px"
+                }}
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <segment.icon className="w-6 h-6 text-foreground" />
+                <div style={{
+                  flexShrink: 0,
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "12px",
+                  background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "24px"
+                }}>
+                  {segment.icon}
                 </div>
-                <p className="text-off-white/90 leading-relaxed">
+                <p style={{
+                  color: "rgba(244, 245, 247, 0.9)",
+                  lineHeight: 1.6,
+                  fontFamily: "'Poppins', sans-serif"
+                }}>
                   {segment.text}
                 </p>
               </div>
             ))}
           </div>
 
-          <p className="text-center text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+          <p style={{
+            textAlign: "center",
+            color: "rgba(179, 179, 179, 1)",
+            fontSize: "18px",
+            marginBottom: "32px",
+            maxWidth: "560px",
+            margin: "0 auto 32px",
+            fontFamily: "'Poppins', sans-serif"
+          }}>
             Esse aulão foi feito especialmente para você
           </p>
 
-          <div className="text-center">
-            <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}>GARANTA SEU INGRESSO AGORA</CTAButton>
+          <div style={{ textAlign: "center" }}>
+            <a
+              href="#oferta"
+              onClick={(e) => { e.preventDefault(); handleClick(); }}
+              style={{
+                background: "linear-gradient(94deg, #FF0AD7 12.19%, #7E33FF 96.82%)",
+                padding: "20px 40px",
+                borderRadius: "12px",
+                fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+                color: "#FFFFFF",
+                boxShadow: "0 0 40px rgba(255, 10, 215, 0.4)",
+                display: "inline-block",
+                textAlign: "center",
+                textDecoration: "none",
+                cursor: "pointer",
+                fontFamily: "'Poppins', sans-serif"
+              }}
+            >
+              GARANTA SEU INGRESSO AGORA
+            </a>
           </div>
         </div>
       </div>
