@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import depoimento1 from "@/assets/new-depoimento1.webp";
 import depoimento2 from "@/assets/new-depoimento2.webp";
 import depoimento3 from "@/assets/new-depoimento3.webp";
@@ -21,13 +20,7 @@ const TestimonialsSection = () => {
   return (
     <section className="py-16 md:py-24 bg-card/50">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
-        >
+        <div className="text-center mb-12 md:mb-16">
           <span className="text-highlight-orange font-semibold text-sm uppercase tracking-wider">
             Depoimentos reais
           </span>
@@ -38,17 +31,11 @@ const TestimonialsSection = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Veja o que dizem os alunos que já transformaram seu inglês em renda real
           </p>
-        </motion.div>
+        </div>
 
         {/* Video Testimonials */}
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="glass-card rounded-2xl overflow-hidden"
-          >
+          <div className="glass-card rounded-2xl overflow-hidden">
             <div style={{ position: "relative", paddingTop: "177.5%" }}>
               <iframe
                 id="panda-2eebd962-41ee-431e-aeeb-ef6dd9f4d985"
@@ -60,15 +47,9 @@ const TestimonialsSection = () => {
                 height="100%"
               />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="glass-card rounded-2xl overflow-hidden"
-          >
+          <div className="glass-card rounded-2xl overflow-hidden">
             <div style={{ position: "relative", paddingTop: "177.63713080168776%" }}>
               <iframe
                 id="panda-68b92a47-028e-41e2-a518-f0f9b924ef78"
@@ -80,18 +61,14 @@ const TestimonialsSection = () => {
                 height="100%"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Screenshot Testimonials */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {screenshotTestimonials.map((img, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
               className="glass-card rounded-xl overflow-hidden hover:border-primary/50 transition-colors"
             >
               <img
@@ -100,7 +77,7 @@ const TestimonialsSection = () => {
                 className="w-full h-auto"
                 loading="lazy"
               />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
