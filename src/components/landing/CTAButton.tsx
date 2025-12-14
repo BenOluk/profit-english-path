@@ -9,7 +9,20 @@ interface CTAButtonProps {
 }
 
 const CTAButton = ({ children, className = "", href, onClick }: CTAButtonProps) => {
-  const baseClasses = `gradient-primary px-8 py-4 md:px-10 md:py-5 rounded-xl text-base md:text-lg font-bold uppercase tracking-wide text-foreground shadow-lg glow-pink transition-all duration-300 hover:brightness-110 inline-block text-center animate-pulse ${className}`;
+  // 1. Removi "animate-pulse" desta string
+  const baseClasses = `gradient-primary px-8 py-4 md:px-10 md:py-5 rounded-xl text-base md:text-lg font-bold uppercase tracking-wide text-foreground shadow-lg glow-pink transition-all duration-300 hover:brightness-110 inline-block text-center ${className}`;
+
+  // 2. Definindo a animação para reutilizar (opacidade pulsando)
+  const pulseAnimation = {
+    opacity: [1, 0.6, 1], // Vai de 100% para 60% e volta para 100%
+    scale: [1, 1.02, 1], // (Opcional) Um leve "respiro" no tamanho
+  };
+
+  const pulseTransition = {
+    duration: 3, // AQUI você controla a velocidade (3 segundos é mais lento)
+    repeat: Infinity,
+    ease: "easeInOut",
+  };
 
   if (href) {
     return (
@@ -17,7 +30,10 @@ const CTAButton = ({ children, className = "", href, onClick }: CTAButtonProps) 
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        whileHover={{ scale: 1.05 }}
+        // Adicionando a animação customizada
+        animate={pulseAnimation}
+        transition={pulseTransition}
+        whileHover={{ scale: 1.05, opacity: 1 }} // Garante opacidade total no hover
         whileTap={{ scale: 0.98 }}
         className={baseClasses}
       >
@@ -29,7 +45,10 @@ const CTAButton = ({ children, className = "", href, onClick }: CTAButtonProps) 
   return (
     <motion.button
       onClick={onClick}
-      whileHover={{ scale: 1.05 }}
+      // Adicionando a animação customizada
+      animate={pulseAnimation}
+      transition={pulseTransition}
+      whileHover={{ scale: 1.05, opacity: 1 }}
       whileTap={{ scale: 0.98 }}
       className={baseClasses}
     >
