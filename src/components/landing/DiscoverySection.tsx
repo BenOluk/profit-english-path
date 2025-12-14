@@ -42,7 +42,7 @@ const DiscoverySection = () => {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
-            No Aulão Inglês Lucrativo, você vai{" "}
+            Na Imersão Inglês Lucrativo, você vai{" "}
             <span className="gradient-text">descobrir:</span>
           </h2>
 

@@ -21,7 +21,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-hero/10 to-transparent" />
       
       <div className="container relative z-10">

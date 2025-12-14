@@ -24,7 +24,7 @@ const EventCTASection = () => {
           className="max-w-2xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="gradient-text">Aulão Inglês Lucrativo</span>
+            <span className="gradient-text">Imersão Inglês Lucrativo</span>
           </h2>
 
           <p className="text-xl md:text-2xl text-foreground font-semibold mb-2">Imersão Gravada</p>

@@ -58,7 +58,7 @@ const ArgumentSection = () => {
 
           <div className="mt-12 pt-8 border-t border-muted/20">
             <h3 className="text-xl md:text-2xl font-bold text-foreground mb-8 text-center">
-              No Aulão Inglês Lucrativo, você aprende:
+              Na Imersão Inglês Lucrativo, você aprende:
             </h3>
 
             <div className="space-y-4 max-w-2xl mx-auto">
