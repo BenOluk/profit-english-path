@@ -1,4 +1,5 @@
 import HeroSection from "@/components/landing/HeroSection";
+import Ticker from "@/components/landing/Ticker";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import ArgumentSection from "@/components/landing/ArgumentSection";
 import EventCTASection from "@/components/landing/EventCTASection";
@@ -16,6 +17,8 @@ const Index = () => {
     <main className="overflow-hidden">
       {/* BLOCO 1 - Hero */}
       <HeroSection />
+      {/* Ticker de rolagem */}
+      <Ticker />
       {/* BLOCO 2 - Features/Transição */}
       <FeaturesSection />
       {/* BLOCO 3 - Argument + What you learn */}
