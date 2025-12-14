@@ -9,7 +9,7 @@ const Ticker = () => {
   return (
     <div className="relative z-20 w-full overflow-hidden bg-gradient-pink/20 backdrop-blur-sm border-y border-white/10 py-3">
       <motion.div
-        className="flex whitespace-nowrap"
+        className="flex whitespace-nowrap w-max"
         animate={{ x: "-50%" }}
         transition={{
           duration: 4,
