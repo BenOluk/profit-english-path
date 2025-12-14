@@ -17,11 +17,19 @@ const EventCTASection = () => {
 
           <p className="text-lg text-muted-foreground mb-8">15 dias de acesso </p>
 
-          <p className="text-lg text-muted-foreground mb-8">Bônus Exclusivo: Hot List: 25 principais sites pra conseguir trabalhos na internet</p>
+          <p className="text-lg md:text-xl text-highlight-orange font-bold mb-2">Bônus Exclusivo:</p>
 
-          <CTAButton onClick={() => document.getElementById("oferta")?.scrollIntoView({
-            behavior: "smooth"
-          })}>
+          <p className="text-lg text-muted-foreground mb-8">
+            Hot List: 25 principais sites pra conseguir trabalhos na internet
+          </p>
+
+          <CTAButton
+            onClick={() =>
+              document.getElementById("oferta")?.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+          >
             QUERO FAZER DINHEIRO COMO TRADUTOR
           </CTAButton>
         </div>
