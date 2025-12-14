@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
 
 const segments = [
@@ -40,24 +39,15 @@ const SegmentationSection = () => {
       <div className="absolute left-1/2 top-0 w-96 h-96 bg-gradient-purple/10 rounded-full blur-[120px] -translate-x-1/2" />
       
       <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
             <span className="text-highlight">✦</span> Se você...
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-12">
             {segments.map((segment, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="glass-card p-6 flex items-start gap-4 group hover:border-gradient-pink/40 transition-all duration-300"
               >
                 <span className="text-3xl">{segment.emoji}</span>
@@ -69,32 +59,20 @@ const SegmentationSection = () => {
                     {segment.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-center text-xl md:text-2xl font-bold text-foreground mb-8"
-          >
+          <p className="text-center text-xl md:text-2xl font-bold text-foreground mb-8">
             Você <span className="text-highlight">PRECISA</span> participar da Imersão INGLÊS LUCRATIVO
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="text-center"
-          >
+          <div className="text-center">
             <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}>
               GARANTA SEU INGRESSO AGORA
             </CTAButton>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

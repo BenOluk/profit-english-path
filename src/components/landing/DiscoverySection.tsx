@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const discoveries = [
   {
     emoji: "🔎",
@@ -34,13 +32,7 @@ const DiscoverySection = () => {
       <div className="absolute right-0 bottom-0 w-80 h-80 bg-gradient-pink/10 rounded-full blur-[100px]" />
       
       <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
             Na Imersão Inglês Lucrativo, você vai{" "}
             <span className="gradient-text">descobrir:</span>
@@ -48,12 +40,8 @@ const DiscoverySection = () => {
 
           <div className="space-y-5">
             {discoveries.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="glass-card p-6 md:p-8 group hover:border-highlight/40 transition-all duration-300"
               >
                 <div className="flex items-start gap-4 md:gap-6">
@@ -67,25 +55,19 @@ const DiscoverySection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-12 text-center"
-          >
+          <div className="mt-12 text-center">
             <p className="text-xl md:text-2xl text-off-white/80 leading-relaxed max-w-3xl mx-auto">
               Nada de conteúdo engessado. É{" "}
               <span className="text-highlight font-semibold">papo reto</span> sobre dinheiro, 
               liberdade e o poder de usar seu inglês com{" "}
               <span className="gradient-text font-semibold">estratégia.</span>
             </p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
