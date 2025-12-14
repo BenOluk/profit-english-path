@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Ticker = () => {
   const text = "🚨 EXCLUSIVO PARA PESSOAS COM INGLÊS INTERMEDIÁRIO OU AVANÇADO 🚨";
-  
+
   // Duplicate content for seamless loop
   const items = Array(8).fill(text);
 
@@ -12,24 +12,18 @@ const Ticker = () => {
         className="flex whitespace-nowrap"
         animate={{ x: "-50%" }}
         transition={{
-          duration: 20,
+          duration: 10,
           repeat: Infinity,
           ease: "linear" as const,
         }}
       >
         {items.map((item, index) => (
-          <span
-            key={index}
-            className="gradient-text font-semibold mx-8 text-sm md:text-base"
-          >
+          <span key={index} className="gradient-text font-semibold mx-8 text-sm md:text-base">
             {item}
           </span>
         ))}
         {items.map((item, index) => (
-          <span
-            key={`duplicate-${index}`}
-            className="gradient-text font-semibold mx-8 text-sm md:text-base"
-          >
+          <span key={`duplicate-${index}`} className="gradient-text font-semibold mx-8 text-sm md:text-base">
             {item}
           </span>
         ))}
