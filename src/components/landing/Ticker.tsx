@@ -7,7 +7,7 @@ const Ticker = () => {
   const items = Array(8).fill(text);
 
   return (
-    <div className="relative z-20 w-full overflow-hidden bg-gradient-purple/20 backdrop-blur-sm border-y border-white/10 py-3">
+    <div className="relative z-20 w-full overflow-hidden bg-gradient-pink/20 backdrop-blur-sm border-y border-white/10 py-3">
       <motion.div
         className="flex whitespace-nowrap"
         animate={{ x: "-50%" }}
@@ -20,7 +20,7 @@ const Ticker = () => {
         {items.map((item, index) => (
           <span
             key={index}
-            className="text-highlight font-semibold mx-8 text-sm md:text-base"
+            className="gradient-text font-semibold mx-8 text-sm md:text-base"
           >
             {item}
           </span>
@@ -28,7 +28,7 @@ const Ticker = () => {
         {items.map((item, index) => (
           <span
             key={`duplicate-${index}`}
-            className="text-highlight font-semibold mx-8 text-sm md:text-base"
+            className="gradient-text font-semibold mx-8 text-sm md:text-base"
           >
             {item}
           </span>

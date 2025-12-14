@@ -15,10 +15,10 @@ import FinalCTASection from "@/components/landing/FinalCTASection";
 const Index = () => {
   return (
     <main className="overflow-hidden">
+      {/* Ticker de rolagem - Topo */}
+      <Ticker />
       {/* BLOCO 1 - Hero */}
       <HeroSection />
-      {/* Ticker de rolagem */}
-      <Ticker />
       {/* BLOCO 2 - Features/Transição */}
       <FeaturesSection />
       {/* BLOCO 3 - Argument + What you learn */}
