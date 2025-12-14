@@ -12,7 +12,7 @@ const Ticker = () => {
         className="flex whitespace-nowrap w-max"
         animate={{ x: "-50%" }}
         transition={{
-          duration: 4,
+          duration: 20,
           repeat: Infinity,
           ease: "linear" as const,
         }}
