@@ -24,8 +24,7 @@ const EventCTASection = () => {
           
           <p className="text-lg md:text-xl text-highlight-orange font-bold mb-2">Acesso Imediato</p>
           
-          <p className="text-lg text-muted-foreground mb-8">15 dias de acesso 
-Bônus Exclusivo</p>
+          <p className="text-lg text-muted-foreground mb-8">15 dias de acesso </p>
 
           <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({
           behavior: 'smooth'
