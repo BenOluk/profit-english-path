@@ -19,9 +19,9 @@ const CTAButton = ({ children, className = "", href, onClick }: CTAButtonProps) 
   };
 
   const pulseTransition = {
-    duration: 3, // AQUI você controla a velocidade (3 segundos é mais lento)
+    duration: 3,
     repeat: Infinity,
-    ease: "easeInOut",
+    ease: "easeInOut" as const,
   };
 
   if (href) {
