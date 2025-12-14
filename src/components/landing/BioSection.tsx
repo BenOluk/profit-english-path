@@ -15,11 +15,7 @@ const BioSection = () => {
               transition={{ duration: 0.6 }}
               className="w-full md:w-1/2"
             >
-              <img
-                src={imgExpert}
-                alt="Naluzz - Tradutora Multitrampo"
-                className="w-full max-w-md mx-auto md:mx-0"
-              />
+              <img src={imgExpert} alt="Naluzz - Tradutora Multitrampo" className="w-full max-w-md mx-auto md:mx-0" />
             </motion.div>
 
             {/* Content */}
@@ -34,26 +30,25 @@ const BioSection = () => {
                 Meet Your Teacher!
               </h2>
 
-              <p className="text-foreground text-lg mb-4">
-                Oi, eu sou a Naluzz!
-              </p>
+              <p className="text-foreground text-lg mb-4">Oi, eu sou a Naluzz!</p>
 
               <p className="text-foreground text-base md:text-lg leading-relaxed mb-4">
-                Monetizo meu inglês há 16 anos como Tradutora Multitrampo e{" "}
-                <strong className="text-highlight-orange">
-                  já fiz mais de R$ 2 milhões trabalhando do meu jeito,
-                </strong>{" "}
-                respeitando minha autenticidade e chutando as caixinhas nas quais os outros tentaram me encaixar à força.
+                Monetizo meu inglês há 17 anos como Tradutora Multitrampo e{" "}
+                <strong className="text-highlight-orange">já fiz mais de R$ 2 milhões trabalhando do meu jeito,</strong>{" "}
+                respeitando minha autenticidade e chutando as caixinhas nas quais os outros tentaram me encaixar à
+                força.
               </p>
 
               <p className="text-foreground text-base md:text-lg leading-relaxed">
                 Vou mostrar para você que é possível{" "}
                 <strong>
-                  fazer MAIS DINHEIRO do que você ganha atualmente, trabalhando menos e vivendo uma vida que realmente faz sentido para você:
+                  fazer MAIS DINHEIRO do que você ganha atualmente, trabalhando menos e vivendo uma vida que realmente
+                  faz sentido para você:
                 </strong>{" "}
                 basta usar seu inglês como ferramenta de trabalho, e então você poderá trabalhar{" "}
                 <strong>
-                  quantas horas quiser, nos dias em que quiser, sem precisar de diploma e sem precisar ser professor de inglês.
+                  quantas horas quiser, nos dias em que quiser, sem precisar de diploma e sem precisar ser professor de
+                  inglês.
                 </strong>
               </p>
             </motion.div>
