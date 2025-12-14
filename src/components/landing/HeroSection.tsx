@@ -49,13 +49,6 @@ const HeroSection = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}>QUERO PARTICIPAR DO AULÃO</CTAButton>
-        </motion.div>
       </div>
     </section>
   );
