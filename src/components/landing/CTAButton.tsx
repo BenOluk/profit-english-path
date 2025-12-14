@@ -33,7 +33,7 @@ const CTAButton = ({ children, className = "", href, onClick }: CTAButtonProps) 
         // Adicionando a animação customizada
         animate={pulseAnimation}
         transition={pulseTransition}
-        whileHover={{ scale: 1.05, opacity: 1 }} // Garante opacidade total no hover
+        whileHover={{ scale: 0.85, opacity: 1 }} // Garante opacidade total no hover
         whileTap={{ scale: 0.98 }}
         className={baseClasses}
       >
