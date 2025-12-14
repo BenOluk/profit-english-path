@@ -40,7 +40,7 @@ const FinalCTASection = () => {
             </CTAButton>
           </motion.div>
 
-          <p className="mt-6 text-sm text-muted-foreground">Aulão gravado - Acesso Imediato</p>
+          <p className="mt-6 text-sm text-muted-foreground">Imersão gravada - Acesso Imediato</p>
         </motion.div>
       </div>
     </section>;

@@ -80,7 +80,7 @@ const SegmentationSection = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center text-xl md:text-2xl font-bold text-foreground mb-8"
           >
-            Você <span className="text-highlight">PRECISA</span> participar do Aulão INGLÊS LUCRATIVO
+            Você <span className="text-highlight">PRECISA</span> participar da Imersão INGLÊS LUCRATIVO
           </motion.p>
 
           <motion.div
