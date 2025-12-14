@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Check, Gift } from "lucide-react";
 import CTAButton from "./CTAButton";
 
@@ -15,26 +14,14 @@ const PricingSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             Comece seu <span className="gradient-text italic">aprendizado</span> aqui:
           </h2>
-        </motion.div>
+        </div>
 
         <div className="max-w-md mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
+          <div className="relative">
             {/* Glow effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-primary via-gradient-pink to-primary rounded-3xl blur-xl opacity-40" />
 
@@ -43,12 +30,8 @@ const PricingSection = () => {
               {/* Included items */}
               <div className="space-y-4 mb-8">
                 {includedItems.map((item, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
                     className="flex items-start gap-3"
                   >
                     <div className="w-5 h-5 rounded bg-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -67,7 +50,7 @@ const PricingSection = () => {
                         <><span className="font-semibold">BÔNUS:</span> Hot List, uma lista com os 25 principais sites para você prospectar trabalhos de tradução.</>
                       )}
                     </span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
@@ -95,7 +78,7 @@ const PricingSection = () => {
                 </CTAButton>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
