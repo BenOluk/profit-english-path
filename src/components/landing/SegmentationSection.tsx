@@ -1,31 +1,36 @@
 import { motion } from "framer-motion";
-import { Lightbulb, TrendingUp, MapPin, Coins, UserCheck, Zap } from "lucide-react";
 import CTAButton from "./CTAButton";
 
 const segments = [
   {
-    icon: Lightbulb,
-    text: "Quer transformar seu inglês em dinheiro, não só em consumo de conteúdo. E cansou de estudar idioma pra ver série e nada mais.",
+    emoji: "💸",
+    title: "Quer transformar seu inglês em dinheiro, não só em consumo de conteúdo",
+    description: "E cansou de estudar idioma pra ver série e nada mais",
   },
   {
-    icon: TrendingUp,
-    text: "Quer uma nova profissão ou uma fonte de renda extra. E quer reencontrar leveza, sem recomeçar do zero.",
+    emoji: "🧑‍💼",
+    title: "Quer uma nova profissão ou uma fonte de renda extra",
+    description: "E quer reencontrar leveza, sem recomeçar do zero",
   },
   {
-    icon: MapPin,
-    text: "Quer sair da CLT e conquistar liberdade de tempo, geográfica e financeira. Sem virar influenciador ou empreender em algo que não faz sentido.",
+    emoji: "🚪",
+    title: "Quer sair da CLT e conquistar liberdade de tempo, geográfica e financeira",
+    description: "Sem virar influenciador ou empreender em algo que não faz sentido",
   },
   {
-    icon: Coins,
-    text: "Sente que desperdiçou tempo e dinheiro aprendendo inglês — e agora quer retorno monetizando uma habilidade que você já tem.",
+    emoji: "⏳",
+    title: "Sente que desperdiçou tempo e dinheiro aprendendo inglês — e agora quer retorno",
+    description: "Monetizando uma habilidade que você já tem",
   },
   {
-    icon: UserCheck,
-    text: "Busca uma nova fonte de renda que pague bem e respeite sua individualidade. Sem chefe, sem rotina engessada, sem crachá.",
+    emoji: "🚀",
+    title: "Busca uma nova fonte de renda que pague bem e respeite sua individualidade",
+    description: "Sem chefe, sem rotina engessada, sem crachá",
   },
   {
-    icon: Zap,
-    text: "Quer aprender algo aplicável, rápido e com retorno real. Sem 4 anos de faculdade, sem gastar com cursos técnicos, sem enrolação.",
+    emoji: "📚",
+    title: "Quer aprender algo aplicável, rápido e com retorno real",
+    description: "Sem 4 anos de faculdade, sem gastar com cursos técnicos, sem enrolação",
   },
 ];
 
@@ -41,12 +46,9 @@ const SegmentationSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
             <span className="text-highlight">✦</span> Se você...
           </h2>
-          <p className="text-center text-muted-foreground text-lg mb-12 max-w-xl mx-auto">
-            Esse aulão foi feito especialmente para você
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-12">
             {segments.map((segment, index) => (
@@ -58,24 +60,39 @@ const SegmentationSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="glass-card p-6 flex items-start gap-4 group hover:border-gradient-pink/40 transition-all duration-300"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <segment.icon className="w-6 h-6 text-foreground" />
+                <span className="text-3xl">{segment.emoji}</span>
+                <div>
+                  <p className="text-foreground font-semibold leading-relaxed mb-1">
+                    {segment.title}
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {segment.description}
+                  </p>
                 </div>
-                <p className="text-off-white/90 leading-relaxed">
-                  {segment.text}
-                </p>
               </motion.div>
             ))}
           </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-center text-xl md:text-2xl font-bold text-foreground mb-8"
+          >
+            Você <span className="text-highlight">PRECISA</span> participar do Aulão INGLÊS LUCRATIVO
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="text-center"
           >
-            <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}>GARANTA SEU INGRESSO AGORA</CTAButton>
+            <CTAButton onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}>
+              GARANTA SEU INGRESSO AGORA
+            </CTAButton>
           </motion.div>
         </motion.div>
       </div>
