@@ -41,5 +41,38 @@
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <script>
+    (function () {
+        const parametros = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"]
+        r = new URL(window.top.location.href);
+        let scks = []
+        let utms = {}
+        parametros.forEach((el => {
+            if (el.includes("source")) {
+                scks[scks.length] = r.searchParams.get(el) ? r.searchParams.get(el) : (document.referrer ? new URL(document.referrer).hostname : "direto")
+                utms[el] = r.searchParams.get(el) ? r.searchParams.get(el) : (document.referrer ? new URL(document.referrer).hostname : "direto")
+            }
+            else {
+                scks[scks.length] = r.searchParams.get(el) ? r.searchParams.get(el) : ""
+                utms[el] = r.searchParams.get(el) ? r.searchParams.get(el) : ""
+            }
+        }))
+        scks = scks.filter(function (el) {
+            return el != "";
+        });
+        let sck = "sck=" + scks.join('|')
+        let href = ""
+        for (el in utms) {
+            utms[el] ? href += el + "=" + utms[el] + "&" : ""
+        }
+        href += sck
+        document.querySelectorAll('a').forEach(el => {
+            if (!el.href.includes("#")) {
+                el.href.includes("?") ? el.href += "&" + href : el.href += "?" + href
+            }
+        })
+    })();
+    </script>
   </body>
 </html>
